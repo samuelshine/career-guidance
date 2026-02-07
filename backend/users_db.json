@@ -1,0 +1,36 @@
+{
+  "sam": {
+    "username": "sam",
+    "email": null,
+    "full_name": null,
+    "disabled": null,
+    "hashed_password": "$2b$12$LdEftzvSHAXNcgdRbUX3O.RFuP2F7ajS58kI0UAckh01np9MazibK"
+  },
+  "testuser1": {
+    "username": "testuser1",
+    "email": null,
+    "full_name": null,
+    "disabled": null,
+    "hashed_password": "$2b$12$i9FDXuR32RogVzYwz5PU0.RApdVM/.3fHcP19xbkaIDrWyTE.kwri"
+  },
+  "testuser": {
+    "username": "testuser",
+    "email": null,
+    "full_name": "Test User",
+    "disabled": null,
+    "hashed_password": "$2b$12$j5b6LdgBON8u.Ok5sJsMKO2WZv93GRB33C12YPGtpiJ11N.OHtnU2"
+  },
+  "samm": {
+    "username": "samm",
+    "email": null,
+    "full_name": "Samuel Shine",
+    "disabled": null,
+    "hashed_password": "$2b$12$SCekwszcAPf6Zsx00Vx2D.WZN4iUoHkSFQGB9YUtAHqGnyCwICC7K"
+  },
+  "demo": {
+    "username": "demo",
+    "email": "demo@careerops.ai",
+    "full_name": "Alex Chen",
+    "hashed_password": "$2b$12$sKpLvgWprgmPdpIETZSlWuWr4.P0F7VNvMi4VaB6vHnXufBKUBKYG"
+  }
+}

@@ -1,0 +1,606 @@
+{
+  "user_id": "demo-user",
+  "full_name": "Alex Chen",
+  "current_role": "Backend Developer",
+  "experience": [
+    "Software Engineer Intern @ Google",
+    "Junior Python Developer @ Startup"
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "category": "Hard",
+      "proficiency": 0.9
+    },
+    {
+      "name": "Django",
+      "category": "Hard",
+      "proficiency": 0.8
+    },
+    {
+      "name": "REST APIs",
+      "category": "Hard",
+      "proficiency": 0.85
+    },
+    {
+      "name": "SQL",
+      "category": "Hard",
+      "proficiency": 0.75
+    },
+    {
+      "name": "Git",
+      "category": "Hard",
+      "proficiency": 0.8
+    },
+    {
+      "name": "Communication",
+      "category": "Soft",
+      "proficiency": 0.7
+    }
+  ],
+  "branches": {
+    "main": {
+      "id": "main",
+      "name": "Current: Backend Dev",
+      "target_role": "Senior Backend Engineer",
+      "job_description": null,
+      "created_at": "2026-02-07T12:24:00.247786",
+      "conflicts": [],
+      "is_active": false
+    },
+    "feature-ai-engineer": {
+      "id": "feature-ai-engineer",
+      "name": "Pivot to AI",
+      "target_role": "AI Engineer",
+      "job_description": "Build and deploy ML models at scale. Requires PyTorch, MLOps.",
+      "created_at": "2026-02-07T12:24:00.247786",
+      "conflicts": [
+        {
+          "id": "c1",
+          "description": "Missing core ML framework knowledge.",
+          "severity": "CRITICAL",
+          "missing_skill": "PyTorch",
+          "suggested_patch": {
+            "id": "9d6f6b40-f536-4c2f-819f-6757acae06d0",
+            "title": "Learn PyTorch Basics",
+            "action_items": [
+              "Complete PyTorch Blitz tutorial",
+              "Build a simple CNN"
+            ],
+            "estimated_hours": 20,
+            "status": "OPEN",
+            "resources": []
+          }
+        },
+        {
+          "id": "c2",
+          "description": "Lack of theoretical foundation in Deep Learning.",
+          "severity": "WARNING",
+          "missing_skill": "Neural Networks",
+          "suggested_patch": {
+            "id": "9699ee68-43ae-48c8-a809-461a3c7f039f",
+            "title": "Deep Learning Specialization",
+            "action_items": [
+              "Watch Andrew Ng's course",
+              "Implement backprop from scratch"
+            ],
+            "estimated_hours": 40,
+            "status": "OPEN",
+            "resources": []
+          }
+        },
+        {
+          "id": "c5",
+          "description": "No experience with ML deployment pipelines.",
+          "severity": "CRITICAL",
+          "missing_skill": "MLOps",
+          "suggested_patch": {
+            "id": "00933c15-8863-478f-b26c-0caad2263af5",
+            "title": "MLOps Fundamentals",
+            "action_items": [
+              "Learn MLflow",
+              "Deploy model to AWS SageMaker"
+            ],
+            "estimated_hours": 30,
+            "status": "OPEN",
+            "resources": []
+          }
+        }
+      ],
+      "is_active": false
+    },
+    "feature-pm": {
+      "id": "feature-pm",
+      "name": "Pivot to PM",
+      "target_role": "Product Manager",
+      "job_description": "Lead product strategy and execution for AI products.",
+      "created_at": "2026-02-07T12:24:00.247786",
+      "conflicts": [
+        {
+          "id": "c3",
+          "description": "No experience with product analytics tools.",
+          "severity": "CRITICAL",
+          "missing_skill": "Mixpanel",
+          "suggested_patch": {
+            "id": "17e4a3ab-43d1-4a5d-bc9f-287e159038a4",
+            "title": "Product Analytics 101",
+            "action_items": [
+              "Learn funnel analysis",
+              "Setup a mock dashboard"
+            ],
+            "estimated_hours": 10,
+            "status": "OPEN",
+            "resources": []
+          }
+        },
+        {
+          "id": "c4",
+          "description": "Need to improve stakeholder management.",
+          "severity": "WARNING",
+          "missing_skill": "Stakeholder Management",
+          "suggested_patch": {
+            "id": "fbd4e4bb-d118-4792-9a0e-860d09a13618",
+            "title": "Leadership Skills",
+            "action_items": [
+              "Read 'The Mom Test'",
+              "Practice user interviews"
+            ],
+            "estimated_hours": 15,
+            "status": "OPEN",
+            "resources": []
+          }
+        }
+      ],
+      "is_active": false
+    },
+    "feature-fullstack": {
+      "id": "feature-fullstack",
+      "name": "Go Full-Stack",
+      "target_role": "Full-Stack Engineer",
+      "job_description": "Build end-to-end features. Requires React, Node.js.",
+      "created_at": "2026-02-07T12:24:00.247786",
+      "conflicts": [
+        {
+          "id": "c6",
+          "description": "No frontend framework experience.",
+          "severity": "CRITICAL",
+          "missing_skill": "React",
+          "suggested_patch": {
+            "id": "b03637cf-eea2-4445-a901-8a7b8ae6ce98",
+            "title": "React Crash Course",
+            "action_items": [
+              "Complete React official tutorial",
+              "Build a TODO app"
+            ],
+            "estimated_hours": 25,
+            "status": "OPEN",
+            "resources": []
+          }
+        },
+        {
+          "id": "c7",
+          "description": "Limited Node.js backend experience.",
+          "severity": "WARNING",
+          "missing_skill": "Node.js",
+          "suggested_patch": {
+            "id": "48bb2bd4-d3d5-4f25-afbd-b1556fe48595",
+            "title": "Node.js Essentials",
+            "action_items": [
+              "Build Express.js API",
+              "Learn async patterns"
+            ],
+            "estimated_hours": 20,
+            "status": "OPEN",
+            "resources": []
+          }
+        }
+      ],
+      "is_active": false
+    },
+    "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d": {
+      "id": "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d",
+      "name": "Path to CTO",
+      "target_role": "CTO",
+      "job_description": "Looking for a PM with SQL and Product Sense.",
+      "created_at": "2026-02-07T12:33:25.805823",
+      "conflicts": [
+        {
+          "id": "27af8d34-771f-4716-92a4-eef0aad01b0a",
+          "description": "The target role is for a Product Manager, but the user profile is for a Backend Developer. There is a significant mismatch in the core responsibilities and required skill sets.",
+          "severity": "CRITICAL",
+          "missing_skill": "Product Management",
+          "suggested_patch": {
+            "id": "8fc2e01e-9061-4b9b-ad31-0f8a4210c3e5",
+            "title": "Transition to Product Management",
+            "action_items": [
+              "Understand the core principles of Product Management.",
+              "Learn about product lifecycle, market research, user story creation, and roadmap planning.",
+              "Gain experience in user research and customer feedback analysis.",
+              "Develop skills in stakeholder management and cross-functional collaboration.",
+              "Seek opportunities to contribute to product-related discussions and initiatives within the current role or through side projects."
+            ],
+            "estimated_hours": 500,
+            "status": "OPEN",
+            "resources": [
+              "Coursera: Product Management Specialization",
+              "Udemy: The Complete Product Management Course",
+              "Product School: Certified Product Manager (CPM) Program",
+              "Books: 'Inspired: How to Create Tech Products Customers Love' by Marty Cagan, 'The Lean Startup' by Eric Ries"
+            ]
+          }
+        },
+        {
+          "id": "43a1fc37-f125-47e6-b691-05d17ead89fe",
+          "description": "The job description explicitly mentions 'Product Sense' as a required skill, which is not directly listed in the user's current skills.",
+          "severity": "WARNING",
+          "missing_skill": "Product Sense",
+          "suggested_patch": {
+            "id": "b6d9246f-f2d2-497b-84e2-f2a8c3273dee",
+            "title": "Develop Product Sense",
+            "action_items": [
+              "Analyze successful and unsuccessful products to understand the factors contributing to their success or failure.",
+              "Practice identifying user needs and pain points.",
+              "Develop the ability to translate business goals into product features.",
+              "Engage in case studies and problem-solving exercises related to product strategy.",
+              "Seek mentorship from experienced product managers."
+            ],
+            "estimated_hours": 150,
+            "status": "OPEN",
+            "resources": [
+              "Articles and blogs on product strategy and user empathy (e.g., Reforge, Mind the Product)",
+              "Product case study websites",
+              "Online courses focusing on user experience and product strategy"
+            ]
+          }
+        },
+        {
+          "id": "4576dcdd-95a9-4500-868f-e840ad34ace6",
+          "description": "The user profile lists 'Python, Django, REST APIs, SQL, Git, Communication' as skills. While SQL is mentioned in the job description, the core focus of the target role is Product Management, not Backend Development.",
+          "severity": "CRITICAL",
+          "missing_skill": "Product Management Core Skills",
+          "suggested_patch": {
+            "id": "30bc0078-c864-4dbf-99a1-2c63cdc49918",
+            "title": "Acquire Product Management Core Skills",
+            "action_items": [
+              "Complete a comprehensive Product Management certification or course.",
+              "Actively participate in product strategy discussions and contribute ideas.",
+              "Seek opportunities to shadow or work with Product Managers.",
+              "Build a portfolio of product-related projects or analyses."
+            ],
+            "estimated_hours": 400,
+            "status": "OPEN",
+            "resources": [
+              "Product School: Certified Product Manager (CPM)",
+              "General Assembly: Product Management Course",
+              "Books: 'Cracking the PM Interview' by Gayle Laakmann McDowell and Jackie Bavaro"
+            ]
+          }
+        }
+      ],
+      "is_active": true
+    }
+  },
+  "active_branch_id": "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d",
+  "history": [
+    {
+      "id": "commit-1",
+      "timestamp": "2026-02-07T10:24:00.247786",
+      "message": "Initial Resume Upload",
+      "parent_hash": null,
+      "snapshot": {}
+    },
+    {
+      "id": "commit-2",
+      "timestamp": "2026-02-07T10:54:00.247786",
+      "message": "Created branch: AI Engineer",
+      "parent_hash": "commit-1",
+      "snapshot": {}
+    },
+    {
+      "id": "commit-3",
+      "timestamp": "2026-02-07T11:24:00.247786",
+      "message": "Created branch: Product Manager",
+      "parent_hash": "commit-2",
+      "snapshot": {}
+    },
+    {
+      "id": "commit-4",
+      "timestamp": "2026-02-07T11:54:00.247786",
+      "message": "Created branch: Full-Stack Engineer",
+      "parent_hash": "commit-3",
+      "snapshot": {}
+    },
+    {
+      "id": "627ca7c0-d132-448b-9c1e-109f78f9bd16",
+      "timestamp": "2026-02-07T12:33:25.805901",
+      "message": "Created branch: CTO",
+      "parent_hash": "commit-4",
+      "snapshot": {
+        "user_id": "demo-user",
+        "full_name": "Alex Chen",
+        "current_role": "Backend Developer",
+        "experience": [
+          "Software Engineer Intern @ Google",
+          "Junior Python Developer @ Startup"
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "category": "Hard",
+            "proficiency": 0.9
+          },
+          {
+            "name": "Django",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "REST APIs",
+            "category": "Hard",
+            "proficiency": 0.85
+          },
+          {
+            "name": "SQL",
+            "category": "Hard",
+            "proficiency": 0.75
+          },
+          {
+            "name": "Git",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "Communication",
+            "category": "Soft",
+            "proficiency": 0.7
+          }
+        ],
+        "branches": {
+          "main": {
+            "id": "main",
+            "name": "Current: Backend Dev",
+            "target_role": "Senior Backend Engineer",
+            "job_description": null,
+            "created_at": "2026-02-07T12:24:00.247786",
+            "conflicts": [],
+            "is_active": false
+          },
+          "feature-ai-engineer": {
+            "id": "feature-ai-engineer",
+            "name": "Pivot to AI",
+            "target_role": "AI Engineer",
+            "job_description": "Build and deploy ML models at scale. Requires PyTorch, MLOps.",
+            "created_at": "2026-02-07T12:24:00.247786",
+            "conflicts": [
+              {
+                "id": "c1",
+                "description": "Missing core ML framework knowledge.",
+                "severity": "CRITICAL",
+                "missing_skill": "PyTorch",
+                "suggested_patch": {
+                  "id": "9d6f6b40-f536-4c2f-819f-6757acae06d0",
+                  "title": "Learn PyTorch Basics",
+                  "action_items": [
+                    "Complete PyTorch Blitz tutorial",
+                    "Build a simple CNN"
+                  ],
+                  "estimated_hours": 20,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c2",
+                "description": "Lack of theoretical foundation in Deep Learning.",
+                "severity": "WARNING",
+                "missing_skill": "Neural Networks",
+                "suggested_patch": {
+                  "id": "9699ee68-43ae-48c8-a809-461a3c7f039f",
+                  "title": "Deep Learning Specialization",
+                  "action_items": [
+                    "Watch Andrew Ng's course",
+                    "Implement backprop from scratch"
+                  ],
+                  "estimated_hours": 40,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c5",
+                "description": "No experience with ML deployment pipelines.",
+                "severity": "CRITICAL",
+                "missing_skill": "MLOps",
+                "suggested_patch": {
+                  "id": "00933c15-8863-478f-b26c-0caad2263af5",
+                  "title": "MLOps Fundamentals",
+                  "action_items": [
+                    "Learn MLflow",
+                    "Deploy model to AWS SageMaker"
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-pm": {
+            "id": "feature-pm",
+            "name": "Pivot to PM",
+            "target_role": "Product Manager",
+            "job_description": "Lead product strategy and execution for AI products.",
+            "created_at": "2026-02-07T12:24:00.247786",
+            "conflicts": [
+              {
+                "id": "c3",
+                "description": "No experience with product analytics tools.",
+                "severity": "CRITICAL",
+                "missing_skill": "Mixpanel",
+                "suggested_patch": {
+                  "id": "17e4a3ab-43d1-4a5d-bc9f-287e159038a4",
+                  "title": "Product Analytics 101",
+                  "action_items": [
+                    "Learn funnel analysis",
+                    "Setup a mock dashboard"
+                  ],
+                  "estimated_hours": 10,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c4",
+                "description": "Need to improve stakeholder management.",
+                "severity": "WARNING",
+                "missing_skill": "Stakeholder Management",
+                "suggested_patch": {
+                  "id": "fbd4e4bb-d118-4792-9a0e-860d09a13618",
+                  "title": "Leadership Skills",
+                  "action_items": [
+                    "Read 'The Mom Test'",
+                    "Practice user interviews"
+                  ],
+                  "estimated_hours": 15,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-fullstack": {
+            "id": "feature-fullstack",
+            "name": "Go Full-Stack",
+            "target_role": "Full-Stack Engineer",
+            "job_description": "Build end-to-end features. Requires React, Node.js.",
+            "created_at": "2026-02-07T12:24:00.247786",
+            "conflicts": [
+              {
+                "id": "c6",
+                "description": "No frontend framework experience.",
+                "severity": "CRITICAL",
+                "missing_skill": "React",
+                "suggested_patch": {
+                  "id": "b03637cf-eea2-4445-a901-8a7b8ae6ce98",
+                  "title": "React Crash Course",
+                  "action_items": [
+                    "Complete React official tutorial",
+                    "Build a TODO app"
+                  ],
+                  "estimated_hours": 25,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c7",
+                "description": "Limited Node.js backend experience.",
+                "severity": "WARNING",
+                "missing_skill": "Node.js",
+                "suggested_patch": {
+                  "id": "48bb2bd4-d3d5-4f25-afbd-b1556fe48595",
+                  "title": "Node.js Essentials",
+                  "action_items": [
+                    "Build Express.js API",
+                    "Learn async patterns"
+                  ],
+                  "estimated_hours": 20,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d": {
+            "id": "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d",
+            "name": "Path to CTO",
+            "target_role": "CTO",
+            "job_description": "Looking for a PM with SQL and Product Sense.",
+            "created_at": "2026-02-07T12:33:25.805823",
+            "conflicts": [
+              {
+                "id": "27af8d34-771f-4716-92a4-eef0aad01b0a",
+                "description": "The target role is for a Product Manager, but the user profile is for a Backend Developer. There is a significant mismatch in the core responsibilities and required skill sets.",
+                "severity": "CRITICAL",
+                "missing_skill": "Product Management",
+                "suggested_patch": {
+                  "id": "8fc2e01e-9061-4b9b-ad31-0f8a4210c3e5",
+                  "title": "Transition to Product Management",
+                  "action_items": [
+                    "Understand the core principles of Product Management.",
+                    "Learn about product lifecycle, market research, user story creation, and roadmap planning.",
+                    "Gain experience in user research and customer feedback analysis.",
+                    "Develop skills in stakeholder management and cross-functional collaboration.",
+                    "Seek opportunities to contribute to product-related discussions and initiatives within the current role or through side projects."
+                  ],
+                  "estimated_hours": 500,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: Product Management Specialization",
+                    "Udemy: The Complete Product Management Course",
+                    "Product School: Certified Product Manager (CPM) Program",
+                    "Books: 'Inspired: How to Create Tech Products Customers Love' by Marty Cagan, 'The Lean Startup' by Eric Ries"
+                  ]
+                }
+              },
+              {
+                "id": "43a1fc37-f125-47e6-b691-05d17ead89fe",
+                "description": "The job description explicitly mentions 'Product Sense' as a required skill, which is not directly listed in the user's current skills.",
+                "severity": "WARNING",
+                "missing_skill": "Product Sense",
+                "suggested_patch": {
+                  "id": "b6d9246f-f2d2-497b-84e2-f2a8c3273dee",
+                  "title": "Develop Product Sense",
+                  "action_items": [
+                    "Analyze successful and unsuccessful products to understand the factors contributing to their success or failure.",
+                    "Practice identifying user needs and pain points.",
+                    "Develop the ability to translate business goals into product features.",
+                    "Engage in case studies and problem-solving exercises related to product strategy.",
+                    "Seek mentorship from experienced product managers."
+                  ],
+                  "estimated_hours": 150,
+                  "status": "OPEN",
+                  "resources": [
+                    "Articles and blogs on product strategy and user empathy (e.g., Reforge, Mind the Product)",
+                    "Product case study websites",
+                    "Online courses focusing on user experience and product strategy"
+                  ]
+                }
+              },
+              {
+                "id": "4576dcdd-95a9-4500-868f-e840ad34ace6",
+                "description": "The user profile lists 'Python, Django, REST APIs, SQL, Git, Communication' as skills. While SQL is mentioned in the job description, the core focus of the target role is Product Management, not Backend Development.",
+                "severity": "CRITICAL",
+                "missing_skill": "Product Management Core Skills",
+                "suggested_patch": {
+                  "id": "30bc0078-c864-4dbf-99a1-2c63cdc49918",
+                  "title": "Acquire Product Management Core Skills",
+                  "action_items": [
+                    "Complete a comprehensive Product Management certification or course.",
+                    "Actively participate in product strategy discussions and contribute ideas.",
+                    "Seek opportunities to shadow or work with Product Managers.",
+                    "Build a portfolio of product-related projects or analyses."
+                  ],
+                  "estimated_hours": 400,
+                  "status": "OPEN",
+                  "resources": [
+                    "Product School: Certified Product Manager (CPM)",
+                    "General Assembly: Product Management Course",
+                    "Books: 'Cracking the PM Interview' by Gayle Laakmann McDowell and Jackie Bavaro"
+                  ]
+                }
+              }
+            ],
+            "is_active": true
+          }
+        },
+        "active_branch_id": "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d",
+        "meta": {}
+      }
+    }
+  ],
+  "meta": {}
+}

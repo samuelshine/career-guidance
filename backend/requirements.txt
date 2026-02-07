@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+langchain
+langsmith
+langchain-google-genai
+pypdf
+python-jose[cryptography]
+bcrypt
+python-dotenv
