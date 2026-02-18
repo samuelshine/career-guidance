@@ -13,6 +13,7 @@ from agents.branching import BranchingEngine
 from agents.coach import CareerCoach
 from agents.interviewer import InterviewAgent
 from agents.recruiter import RecruiterAgent
+from agents.market_analyst import MarketAnalyst
 from auth import verify_password, get_password_hash, create_access_token, ACCESS_TOKEN_EXPIRE_MINUTES
 from datetime import timedelta
 from jose import JWTError, jwt
@@ -28,6 +29,7 @@ branching_engine = BranchingEngine()
 career_coach = CareerCoach()
 interview_agent = InterviewAgent()
 recruiter_agent = RecruiterAgent()
+market_analyst = MarketAnalyst()
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
@@ -104,6 +106,18 @@ async def register(req: RegisterRequest):
     try:
         db.save_user(user_in_db.dict())
         print(f"DEBUG: User {req.username} saved successfully.")
+        
+        # Initialize empty state
+        initial_state = CareerState(
+            user_id=req.username,
+            full_name=req.full_name or req.username,
+            current_role="New User",
+            skills=[],
+            branches={},
+            active_branch_id="main"
+        )
+        db.save_state(initial_state, req.username)
+        
     except Exception as e:
         print(f"DEBUG: Failed to save user: {e}")
         raise HTTPException(status_code=500, detail=str(e))
@@ -113,12 +127,10 @@ async def register(req: RegisterRequest):
 # Protected Routes
 @app.get("/state", response_model=CareerState)
 def get_state(current_user: User = Depends(get_current_user)):
-    # For MVP, we still load the single global state, but now we require auth
-    # In a real app, load state specific to current_user
-    return db.load_state()
+    return db.load_state(current_user.username)
 
 @app.post("/upload-resume")
-async def upload_resume(file: UploadFile = File(...)):
+async def upload_resume(file: UploadFile = File(...), current_user: User = Depends(get_current_user)):
     if file.content_type != "application/pdf":
         raise HTTPException(status_code=400, detail="Only PDF files allowed")
     
@@ -140,7 +152,7 @@ async def upload_resume(file: UploadFile = File(...)):
     extracted_profile = resume_ingestor.parse(text)
     
     # Update state
-    state = db.load_state()
+    state = db.load_state(current_user.username)
     state.full_name = extracted_profile.full_name
     state.current_role = extracted_profile.current_role
     state.experience = extracted_profile.experience
@@ -158,12 +170,12 @@ async def upload_resume(file: UploadFile = File(...)):
     )
     state.history.append(commit)
     
-    db.save_state(state)
+    db.save_state(state, current_user.username)
     return state
 
 @app.post("/branch/create", response_model=Branch)
-def create_branch(target_role: str = Body(...), job_description: str = Body(...)):
-    state = db.load_state()
+def create_branch(target_role: str = Body(...), job_description: str = Body(...), current_user: User = Depends(get_current_user)):
+    state = db.load_state(current_user.username)
     
     # helper to convert skills to string for LLM
     profile_summary = f"Role: {state.current_role}, Skills: {', '.join([s.name for s in state.skills])}"
@@ -178,6 +190,15 @@ def create_branch(target_role: str = Body(...), job_description: str = Body(...)
         conflicts=analysis.conflicts
     )
     
+    # 4. Analyze Market Reality (Synchronous for MVP)
+    print(f"Analyzing market for: {target_role}...")
+    try:
+        insight = market_analyst.analyze_role(target_role)
+        new_branch.market_insight = insight
+        print(f"Market insight added for {target_role}")
+    except Exception as e:
+        print(f"Market Analysis Failed: {e}")
+    
     # Deactivate other branches
     for b_id in state.branches:
         state.branches[b_id].is_active = False
@@ -190,11 +211,12 @@ def create_branch(target_role: str = Body(...), job_description: str = Body(...)
     commit = Commit(
         message=f"Created branch: {target_role}",
         parent_hash=state.history[-1].id if state.history else None,
+        branch_id=new_branch.id,
         snapshot=state.dict(exclude={'history'})
     )
     state.history.append(commit)
     
-    db.save_state(state)
+    db.save_state(state, current_user.username)
     
     return new_branch
 
@@ -204,8 +226,8 @@ class MergeRequest(BaseModel):
     target_role_name: str
 
 @app.post("/branch/merge")
-def merge_branches_endpoint(req: MergeRequest):
-    state = db.load_state()
+def merge_branches_endpoint(req: MergeRequest, current_user: User = Depends(get_current_user)):
+    state = db.load_state(current_user.username)
     
     branch_a = state.branches.get(req.branch_a_id)
     branch_b = state.branches.get(req.branch_b_id)
@@ -252,20 +274,30 @@ def merge_branches_endpoint(req: MergeRequest):
     state.active_branch_id = new_branch.id
     
     # Version Control: Commit
+    # Version Control: Commit
     from models import Commit
+    # Find tips for DAG
+    tip_a = next((c for c in reversed(state.history) if getattr(c, 'branch_id', None) == branch_a.id), None)
+    tip_b = next((c for c in reversed(state.history) if getattr(c, 'branch_id', None) == branch_b.id), None)
+    
+    parent_hash = tip_a.id if tip_a else (state.history[-1].id if state.history else None)
+    merge_parent_hash = tip_b.id if tip_b else None
+
     commit = Commit(
         message=f"Merged branches: {branch_a.name} + {branch_b.name} -> {new_branch.name}",
-        parent_hash=state.history[-1].id if state.history else None,
+        parent_hash=parent_hash,
+        merge_parent_hash=merge_parent_hash,
+        branch_id=new_branch.id,
         snapshot=state.dict(exclude={'history'})
     )
     state.history.append(commit)
     
-    db.save_state(state)
+    db.save_state(state, current_user.username)
     return new_branch
 
 @app.post("/coach/chat")
-def coach_chat(branch_id: str = Body(...), conflict_id: str = Body(...), message: str = Body(...)):
-    state = db.load_state()
+def coach_chat(branch_id: str = Body(...), conflict_id: str = Body(...), message: str = Body(...), current_user: User = Depends(get_current_user)):
+    state = db.load_state(current_user.username)
     branch = state.branches.get(branch_id)
     if not branch:
         raise HTTPException(status_code=404, detail="Branch not found")
@@ -286,8 +318,8 @@ class HeadhuntRequest(BaseModel):
     branch_id: str
 
 @app.post("/recruiter/headhunt")
-def check_headhunt_status(req: HeadhuntRequest):
-    state = db.load_state()
+def check_headhunt_status(req: HeadhuntRequest, current_user: User = Depends(get_current_user)):
+    state = db.load_state(current_user.username)
     branch = state.branches.get(req.branch_id)
     if not branch:
         raise HTTPException(status_code=404, detail="Branch not found")
@@ -300,9 +332,21 @@ def check_headhunt_status(req: HeadhuntRequest):
     
     return result
 
+@app.post("/recruiter/headhunt")
+def check_headhunt_status(branch_id: str = Body(..., embed=True), current_user: User = Depends(get_current_user)):
+    state = db.load_state(current_user.username)
+    if branch_id not in state.branches:
+        raise HTTPException(status_code=404, detail="Branch not found")
+
+    from agents.hiring_committee import committee
+    
+    print(f"Convening Hiring Committee for branch {branch_id}...")
+    report = committee.evaluate(state, branch_id)
+    return report
+
 @app.post("/conflict/resolve")
-def resolve_conflict(branch_id: str = Body(...), conflict_id: str = Body(...)):
-    state = db.load_state()
+def resolve_conflict(branch_id: str = Body(...), conflict_id: str = Body(...), current_user: User = Depends(get_current_user)):
+    state = db.load_state(current_user.username)
     branch = state.branches.get(branch_id)
     if not branch:
         raise HTTPException(status_code=404, detail="Branch not found")
@@ -327,15 +371,17 @@ def resolve_conflict(branch_id: str = Body(...), conflict_id: str = Body(...)):
     branch.conflicts.pop(conflict_index)
     
     # Version Control: Commit the patch
+    # Version Control: Commit the patch
     from models import Commit
     commit = Commit(
         message=f"Resolved conflict: {conflict.missing_skill}",
         parent_hash=state.history[-1].id if state.history else None,
+        branch_id=state.active_branch_id,
         snapshot=state.dict(exclude={'history'})
     )
     state.history.append(commit)
     
-    db.save_state(state)
+    db.save_state(state, current_user.username)
     return {"status": "resolved", "new_skill": new_skill}
 
 @app.post("/reset")
@@ -348,8 +394,8 @@ class RollbackRequest(BaseModel):
     commit_id: str
 
 @app.post("/state/rollback")
-def rollback_state(req: RollbackRequest):
-    state = db.load_state()
+def rollback_state(req: RollbackRequest, current_user: User = Depends(get_current_user)):
+    state = db.load_state(current_user.username)
     
     # Find the commit
     target_commit = next((c for c in state.history if c.id == req.commit_id), None)
@@ -385,15 +431,17 @@ def rollback_state(req: RollbackRequest):
     # Create a new commit for the rollback action itself?
     # Or just set state. 
     # Let's append a "Rollback" commit to show audit trail
+    # Let's append a "Rollback" commit to show audit trail
     from models import Commit
     new_commit = Commit(
         message=f"Rolled back to commit {req.commit_id}",
         parent_hash=state.history[-1].id if state.history else None,
+        branch_id=state.active_branch_id,
         snapshot=state.dict(exclude={'history'}) # Don't nest history recursively
     )
     state.history.append(new_commit)
     
-    db.save_state(state)
+    db.save_state(state, current_user.username)
     return {"status": "success", "message": f"Rolled back to {target_commit.timestamp}"}
 
 # Mock Interview Endpoints
@@ -403,7 +451,7 @@ class InterviewStartRequest(BaseModel):
     topic: str = "General"
 
 @app.post("/interview/start")
-def start_interview(req: InterviewStartRequest):
+def start_interview(req: InterviewStartRequest, current_user: User = Depends(get_current_user)):
     question = interview_agent.generate_question(req.target_role, req.company_name, req.topic)
     return question
 
@@ -413,7 +461,7 @@ class InterviewSubmitRequest(BaseModel):
     answer: str
 
 @app.post("/interview/submit")
-def submit_answer(req: InterviewSubmitRequest):
+def submit_answer(req: InterviewSubmitRequest, current_user: User = Depends(get_current_user)):
     feedback = interview_agent.evaluate_answer(req.question, req.answer, req.target_role)
     return feedback
 

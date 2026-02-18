@@ -1,0 +1,9 @@
+{
+  "e2e_verifier_user": {
+    "username": "e2e_verifier_user",
+    "email": null,
+    "full_name": null,
+    "disabled": null,
+    "hashed_password": "$2b$12$k1B.9/NLMaAgzk5fC26Uwu9tCXvU8KLsOfWVOIXoBKrb9IbrcVsCm"
+  }
+}

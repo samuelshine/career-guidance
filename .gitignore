@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .env
 .DS_Store
+backend/data/
+backend/users_db.json

@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react"
 import { RealityGraph } from "../components/graph/RealityGraph"
-import { CommitHistory } from "../components/CommitHistory"
+import { CommitGraph } from "../components/graph/CommitGraph"
 import { MergeBranchDialog } from "../components/MergeBranchDialog"
 import { RecruiterDialog } from "../components/RecruiterDialog"
 import { Button } from "../components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
-import { Plus, Loader2 } from "lucide-react"
-import { api, type CareerState, type Conflict } from "@/lib/api"
+import { Plus, Loader2, RotateCcw } from "lucide-react"
+import { api, type CareerState, type Conflict, type Commit } from "@/lib/api"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { ResumeUploadDialog } from "@/components/ResumeUploadDialog"
 import { ConflictSheet } from "@/components/ConflictSheet"
+import { toast } from "sonner"
 
 
 export default function Dashboard() {
@@ -34,12 +35,19 @@ export default function Dashboard() {
     const [recruiterData, setRecruiterData] = useState<any>(null)
     const [isRecruiterDialogOpen, setIsRecruiterDialogOpen] = useState(false)
 
+    // Commit Graph State
+    const [selectedCommit, setSelectedCommit] = useState<Commit | null>(null)
+
+    const activeBranch = state?.active_branch_id && state.branches ? state.branches[state.active_branch_id] : null;
+    const marketInsight = activeBranch?.market_insight;
+
     const refreshState = async () => {
         try {
             const data = await api.getState()
             setState(data)
         } catch (e) {
             console.error("Failed to fetch state", e)
+            toast.error("Failed to sync career state. Is the backend running?")
         } finally {
             setLoading(false)
         }
@@ -55,10 +63,25 @@ export default function Dashboard() {
             await api.createBranch(targetRole, jobDescription)
             await refreshState()
             setIsDialogOpen(false)
+            toast.success("Career path created successfully!")
         } catch (e) {
             console.error("Fork failed", e)
+            toast.error("Failed to create career path.")
         } finally {
             setForking(false)
+        }
+    }
+
+    const handleRollback = async (commitId: string) => {
+        if (!confirm("Are you sure you want to revert to this state? This will create a new commit restoring the old state.")) return;
+        try {
+            await api.rollbackState(commitId)
+            await refreshState()
+            setSelectedCommit(null)
+            toast.success("Reverted to previous state.")
+        } catch (e) {
+            console.error(e)
+            toast.error("Rollback failed.")
         }
     }
 
@@ -92,13 +115,17 @@ export default function Dashboard() {
                         className="bg-purple-600 hover:bg-purple-700 text-white"
                         onClick={async () => {
                             if (!state?.active_branch_id) return;
-                            try {
-                                const res = await api.checkHeadhuntStatus(state.active_branch_id);
-                                setRecruiterData(res);
-                                setIsRecruiterDialogOpen(true);
-                            } catch (e) {
-                                console.error("Recruiter check failed", e);
-                            }
+                            const promise = api.checkHeadhuntStatus(state.active_branch_id);
+
+                            toast.promise(promise, {
+                                loading: 'Consulting the hiring committee...',
+                                success: (res) => {
+                                    setRecruiterData(res);
+                                    setIsRecruiterDialogOpen(true);
+                                    return "Analysis complete.";
+                                },
+                                error: "Failed to get hiring opinion."
+                            });
                         }}
                     >
                         Check Hiring Status
@@ -179,6 +206,40 @@ export default function Dashboard() {
                         </CardContent>
                     </Card>
 
+                    {/* Market Reality Section */}
+                    {marketInsight && (
+                        <Card className="border-slate-200">
+                            <CardHeader className="pb-2">
+                                <CardTitle className="text-base flex items-center gap-2">
+                                    Market Reality
+                                    <span className="text-xs font-normal bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Live</span>
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="space-y-3">
+                                <div className="flex justify-between items-center text-sm">
+                                    <span className="text-muted-foreground">Salary Range</span>
+                                    <span className="font-medium">{marketInsight.salary_range}</span>
+                                </div>
+                                <div className="flex justify-between items-center text-sm">
+                                    <span className="text-muted-foreground">Demand</span>
+                                    <span className={`font-medium px-2 py-0.5 rounded ${marketInsight.demand_level === 'High' ? 'bg-green-100 text-green-700' :
+                                        marketInsight.demand_level === 'Medium' ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700'
+                                        }`}>
+                                        {marketInsight.demand_level}
+                                    </span>
+                                </div>
+                                <div>
+                                    <p className="text-xs text-muted-foreground mb-1">Key Trends</p>
+                                    <ul className="text-xs list-disc pl-4 space-y-1 text-slate-600">
+                                        {marketInsight.trends.map((t, i) => (
+                                            <li key={i}>{t}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    )}
+
                     {/* Active Branch Conflicts */}
                     {state?.active_branch_id && state.branches[state.active_branch_id]?.conflicts.length > 0 && (
                         <Card className="bg-slate-900 text-white border-none">
@@ -207,8 +268,57 @@ export default function Dashboard() {
                         </Card>
                     )}
 
+                    {/* Commit Graph */}
                     <div className="pt-4 border-t border-slate-200">
-                        <CommitHistory history={state?.history || []} onRollback={refreshState} />
+                        <div className="h-[500px] border rounded-lg bg-slate-50 relative overflow-hidden">
+                            <div className="absolute top-2 left-2 z-10 bg-white/90 p-2 rounded shadow backdrop-blur-sm border">
+                                <h3 className="text-sm font-semibold text-slate-800">Career History</h3>
+                                <p className="text-xs text-muted-foreground">Interactive Git Workflow</p>
+                            </div>
+
+                            <CommitGraph
+                                history={state?.history || []}
+                                onNodeClick={setSelectedCommit}
+                                activeBranchId={state?.active_branch_id}
+                                selectedCommitId={selectedCommit?.id}
+                            />
+
+                            {selectedCommit && (
+                                <div className="absolute top-2 right-2 z-10 w-72 bg-white p-4 rounded-lg shadow-xl border border-slate-200 animate-in slide-in-from-right-10 fade-in duration-200">
+                                    <div className="flex justify-between items-start mb-3">
+                                        <h4 className="font-semibold text-sm">Commit Details</h4>
+                                        <Button variant="ghost" size="sm" className="h-6 w-6 p-0" onClick={() => setSelectedCommit(null)}>×</Button>
+                                    </div>
+                                    <div className="space-y-3">
+                                        <div className="bg-slate-50 p-2 rounded border border-slate-100">
+                                            <p className="text-sm font-medium text-slate-900">{selectedCommit.message}</p>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
+                                            <div>
+                                                <span className="block font-medium text-slate-500">Hash</span>
+                                                <span className="font-mono">{selectedCommit.id.substring(0, 7)}</span>
+                                            </div>
+                                            <div>
+                                                <span className="block font-medium text-slate-500">Date</span>
+                                                <span>{new Date(selectedCommit.timestamp).toLocaleDateString()}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="pt-2 border-t mt-2">
+                                            <Button
+                                                variant="destructive"
+                                                size="sm"
+                                                className="w-full"
+                                                onClick={() => handleRollback(selectedCommit.id)}
+                                            >
+                                                <RotateCcw className="w-3 h-3 mr-2" />
+                                                Revert to this State
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
 
                     <button

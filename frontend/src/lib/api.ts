@@ -25,18 +25,28 @@ export interface Commit {
     timestamp: string;
     message: string;
     parent_hash: string | null;
+    merge_parent_hash?: string | null;
+    branch_id?: string | null;
+    snapshot?: any;
 }
 
-// Placeholder for Branch interface, as it's used in CareerState but not defined in the prompt.
-// You might need to define its actual structure based on your application's needs.
+export interface MarketInsight {
+    salary_range: string;
+    demand_level: string;
+    trends: string[];
+    top_skills: string[];
+    last_updated: string;
+}
+
 export interface Branch {
-    // Define properties of a branch here, e.g.:
-    // id: string;
-    // name: string;
-    // target_role: string;
-    // job_description: string;
-    // conflicts: Conflict[];
-    [key: string]: any; // Or a more specific type
+    id: string;
+    name: string;
+    target_role: string;
+    job_description: string;
+    market_insight?: MarketInsight;
+    created_at: string;
+    conflicts: Conflict[];
+    is_active: boolean;
 }
 
 export interface CareerState {
@@ -172,7 +182,7 @@ export const api = {
         return res.json();
     },
 
-    async checkHeadhuntStatus(branch_id: string) {
+    async checkHeadhuntStatus(branch_id: string): Promise<HiringReport> {
         const res = await fetch(`${API_URL}/recruiter/headhunt`, {
             method: 'POST',
             headers: this.getHeaders(),
@@ -181,5 +191,17 @@ export const api = {
         return res.json();
     }
 };
+
+export interface DebateMessage {
+    persona: string;
+    message: string;
+}
+
+export interface HiringReport {
+    debate_log: DebateMessage[];
+    final_decision: boolean;
+    salary_offer: string | null;
+    feedback: string;
+}
 
 

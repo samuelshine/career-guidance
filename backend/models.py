@@ -26,11 +26,19 @@ class Conflict(BaseModel):
     missing_skill: str
     suggested_patch: Patch
 
+class MarketInsight(BaseModel):
+    salary_range: str
+    demand_level: str = Field(..., description="High, Medium, Low")
+    trends: List[str]
+    top_skills: List[str]
+    last_updated: datetime = Field(default_factory=datetime.now)
+
 class Branch(BaseModel):
     id: str = Field(default_factory=generate_id)
     name: str # e.g., "Main", "Google-PM-Path"
     target_role: Optional[str] = None
     job_description: Optional[str] = None
+    market_insight: Optional[MarketInsight] = None
     created_at: datetime = Field(default_factory=datetime.now)
     conflicts: List[Conflict] = []
     is_active: bool = False
@@ -40,6 +48,8 @@ class Commit(BaseModel):
     timestamp: datetime = Field(default_factory=datetime.now)
     message: str # e.g., "Started Python course", "Resolved conflict: SQL"
     parent_hash: Optional[str] = None
+    merge_parent_hash: Optional[str] = None
+    branch_id: Optional[str] = None
     snapshot: Dict # Full state snapshot (simplified for MVP)
 
 class CareerState(BaseModel):

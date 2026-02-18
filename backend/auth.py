@@ -1,10 +1,11 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional
 from jose import JWTError, jwt
 import bcrypt
+import os
 
 # Secret key for JWT. In production, this should be in .env
-SECRET_KEY = "hackathon-secret-key-change-me"
+SECRET_KEY = os.getenv("JWT_SECRET_KEY", "hackathon-secret-key-change-me")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
@@ -26,9 +27,11 @@ def get_password_hash(password):
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
     if expires_delta:
-        expire = datetime.utcnow() + expires_delta
+        expire = datetime.now(timezone.utc) + expires_delta
+        # expire needs to be naive for jwt (or check lib compatibility)
+        # python-jose usually works with timezone aware or naive UTC
     else:
-        expire = datetime.utcnow() + timedelta(minutes=15)
+        expire = datetime.now(timezone.utc) + timedelta(minutes=15)
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt

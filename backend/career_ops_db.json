@@ -36,6 +36,11 @@
       "name": "Communication",
       "category": "Soft",
       "proficiency": 0.7
+    },
+    {
+      "name": "PyTorch",
+      "category": "Hard",
+      "proficiency": 0.8
     }
   ],
   "branches": {
@@ -44,7 +49,7 @@
       "name": "Current: Backend Dev",
       "target_role": "Senior Backend Engineer",
       "job_description": null,
-      "created_at": "2026-02-07T12:24:00.247786",
+      "created_at": "2026-02-07T13:02:27.457023",
       "conflicts": [],
       "is_active": false
     },
@@ -53,32 +58,15 @@
       "name": "Pivot to AI",
       "target_role": "AI Engineer",
       "job_description": "Build and deploy ML models at scale. Requires PyTorch, MLOps.",
-      "created_at": "2026-02-07T12:24:00.247786",
+      "created_at": "2026-02-07T13:02:27.457023",
       "conflicts": [
-        {
-          "id": "c1",
-          "description": "Missing core ML framework knowledge.",
-          "severity": "CRITICAL",
-          "missing_skill": "PyTorch",
-          "suggested_patch": {
-            "id": "9d6f6b40-f536-4c2f-819f-6757acae06d0",
-            "title": "Learn PyTorch Basics",
-            "action_items": [
-              "Complete PyTorch Blitz tutorial",
-              "Build a simple CNN"
-            ],
-            "estimated_hours": 20,
-            "status": "OPEN",
-            "resources": []
-          }
-        },
         {
           "id": "c2",
           "description": "Lack of theoretical foundation in Deep Learning.",
           "severity": "WARNING",
           "missing_skill": "Neural Networks",
           "suggested_patch": {
-            "id": "9699ee68-43ae-48c8-a809-461a3c7f039f",
+            "id": "a1493298-2b7d-4112-a38a-85cfc6f80350",
             "title": "Deep Learning Specialization",
             "action_items": [
               "Watch Andrew Ng's course",
@@ -95,7 +83,7 @@
           "severity": "CRITICAL",
           "missing_skill": "MLOps",
           "suggested_patch": {
-            "id": "00933c15-8863-478f-b26c-0caad2263af5",
+            "id": "0d06601f-d798-47b8-9d16-97b91fc0cf50",
             "title": "MLOps Fundamentals",
             "action_items": [
               "Learn MLflow",
@@ -114,7 +102,7 @@
       "name": "Pivot to PM",
       "target_role": "Product Manager",
       "job_description": "Lead product strategy and execution for AI products.",
-      "created_at": "2026-02-07T12:24:00.247786",
+      "created_at": "2026-02-07T13:02:27.457023",
       "conflicts": [
         {
           "id": "c3",
@@ -122,7 +110,7 @@
           "severity": "CRITICAL",
           "missing_skill": "Mixpanel",
           "suggested_patch": {
-            "id": "17e4a3ab-43d1-4a5d-bc9f-287e159038a4",
+            "id": "21f0d4c5-9eb7-4f70-876c-a48e5e2bd35e",
             "title": "Product Analytics 101",
             "action_items": [
               "Learn funnel analysis",
@@ -139,7 +127,7 @@
           "severity": "WARNING",
           "missing_skill": "Stakeholder Management",
           "suggested_patch": {
-            "id": "fbd4e4bb-d118-4792-9a0e-860d09a13618",
+            "id": "caa4eb0b-dabc-4f4c-834f-009fcecbbbbd",
             "title": "Leadership Skills",
             "action_items": [
               "Read 'The Mom Test'",
@@ -158,7 +146,7 @@
       "name": "Go Full-Stack",
       "target_role": "Full-Stack Engineer",
       "job_description": "Build end-to-end features. Requires React, Node.js.",
-      "created_at": "2026-02-07T12:24:00.247786",
+      "created_at": "2026-02-07T13:02:27.457023",
       "conflicts": [
         {
           "id": "c6",
@@ -166,7 +154,7 @@
           "severity": "CRITICAL",
           "missing_skill": "React",
           "suggested_patch": {
-            "id": "b03637cf-eea2-4445-a901-8a7b8ae6ce98",
+            "id": "a7d0d060-406e-4e77-b200-13662d4e4413",
             "title": "React Crash Course",
             "action_items": [
               "Complete React official tutorial",
@@ -183,7 +171,7 @@
           "severity": "WARNING",
           "missing_skill": "Node.js",
           "suggested_patch": {
-            "id": "48bb2bd4-d3d5-4f25-afbd-b1556fe48595",
+            "id": "4f3ace6b-43eb-41a1-be00-8b95afeb9056",
             "title": "Node.js Essentials",
             "action_items": [
               "Build Express.js API",
@@ -197,82 +185,191 @@
       ],
       "is_active": false
     },
-    "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d": {
-      "id": "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d",
-      "name": "Path to CTO",
-      "target_role": "CTO",
-      "job_description": "Looking for a PM with SQL and Product Sense.",
-      "created_at": "2026-02-07T12:33:25.805823",
+    "38254261-318b-4012-b711-39201c32d40d": {
+      "id": "38254261-318b-4012-b711-39201c32d40d",
+      "name": "Path to AI Product Manager",
+      "target_role": "AI Product Manager",
+      "job_description": "Manage and perform all process oriented functions for an AI product",
+      "created_at": "2026-02-07T13:27:01.362212",
       "conflicts": [
         {
-          "id": "27af8d34-771f-4716-92a4-eef0aad01b0a",
-          "description": "The target role is for a Product Manager, but the user profile is for a Backend Developer. There is a significant mismatch in the core responsibilities and required skill sets.",
+          "id": "conflict_1",
+          "description": "The user profile lacks experience in product management methodologies, agile frameworks, and understanding of the product lifecycle, which are crucial for an AI Product Manager role.",
           "severity": "CRITICAL",
-          "missing_skill": "Product Management",
+          "missing_skill": "Product Management Fundamentals",
           "suggested_patch": {
-            "id": "8fc2e01e-9061-4b9b-ad31-0f8a4210c3e5",
-            "title": "Transition to Product Management",
+            "id": "patch_1",
+            "title": "Develop Product Management Fundamentals",
             "action_items": [
-              "Understand the core principles of Product Management.",
-              "Learn about product lifecycle, market research, user story creation, and roadmap planning.",
-              "Gain experience in user research and customer feedback analysis.",
-              "Develop skills in stakeholder management and cross-functional collaboration.",
-              "Seek opportunities to contribute to product-related discussions and initiatives within the current role or through side projects."
+              "Study core product management principles, including market research, user empathy, and roadmap development.",
+              "Learn about agile methodologies (Scrum, Kanban) and their application in product development.",
+              "Understand the product lifecycle from ideation to launch and iteration.",
+              "Familiarize with AI product-specific considerations like data strategy, ethical AI, and model deployment."
+            ],
+            "estimated_hours": 80,
+            "status": "OPEN",
+            "resources": [
+              "Coursera: Product Management Specialization",
+              "Udemy: Agile Product Management Course",
+              "Product School: Certified Product Manager (CPM) Program",
+              "Book: Inspired by Marty Cagan"
+            ]
+          }
+        },
+        {
+          "id": "conflict_2",
+          "description": "While the user has Python and PyTorch skills, the target role requires a broader understanding of AI/ML concepts from a product perspective, including model evaluation, deployment strategies, and understanding different AI techniques beyond just implementation.",
+          "severity": "CRITICAL",
+          "missing_skill": "AI/ML Product Strategy & Lifecycle",
+          "suggested_patch": {
+            "id": "patch_2",
+            "title": "Gain AI/ML Product Strategy Expertise",
+            "action_items": [
+              "Learn about different AI/ML models and their use cases in product development.",
+              "Understand how to define AI product requirements and success metrics.",
+              "Study AI model evaluation techniques and interpretability.",
+              "Explore AI deployment strategies and MLOps concepts.",
+              "Research ethical considerations and bias in AI products."
+            ],
+            "estimated_hours": 100,
+            "status": "OPEN",
+            "resources": [
+              "Coursera: AI for Everyone by Andrew Ng",
+              "edX: AI Product Management MicroMasters Program",
+              "Google AI: Responsible AI Practices",
+              "Kaggle: Learn and explore AI/ML projects"
+            ]
+          }
+        },
+        {
+          "id": "conflict_3",
+          "description": "The user profile indicates backend development skills but lacks direct experience in stakeholder management, market analysis, and go-to-market strategies, which are essential for a Product Manager.",
+          "severity": "CRITICAL",
+          "missing_skill": "Business Acumen & Stakeholder Management",
+          "suggested_patch": {
+            "id": "patch_3",
+            "title": "Develop Business Acumen and Stakeholder Management Skills",
+            "action_items": [
+              "Learn about market research techniques and competitive analysis.",
+              "Understand business strategy, P&L, and ROI concepts.",
+              "Practice stakeholder identification, analysis, and communication strategies.",
+              "Develop skills in user story mapping and backlog prioritization.",
+              "Gain experience in presenting product vision and strategy to diverse audiences."
+            ],
+            "estimated_hours": 60,
+            "status": "OPEN",
+            "resources": [
+              "Udemy: Product Management: From Vision to Execution",
+              "LinkedIn Learning: Product Management Courses",
+              "Book: The Lean Startup by Eric Ries",
+              "Harvard Business Review: Articles on Strategy and Management"
+            ]
+          }
+        },
+        {
+          "id": "conflict_4",
+          "description": "While communication is listed as a skill, product management requires specific communication styles for different audiences (technical teams, business stakeholders, customers) and effective presentation skills.",
+          "severity": "WARNING",
+          "missing_skill": "Product-Specific Communication & Presentation",
+          "suggested_patch": {
+            "id": "patch_4",
+            "title": "Enhance Product-Specific Communication and Presentation Skills",
+            "action_items": [
+              "Practice articulating technical concepts to non-technical audiences.",
+              "Develop skills in creating compelling product presentations and demos.",
+              "Learn techniques for effective negotiation and conflict resolution with stakeholders.",
+              "Seek opportunities to present project updates or product ideas in team meetings."
+            ],
+            "estimated_hours": 30,
+            "status": "OPEN",
+            "resources": [
+              "Toastmasters International",
+              "Coursera: Presentation Skills Training",
+              "Book: Crucial Conversations"
+            ]
+          }
+        }
+      ],
+      "is_active": false
+    },
+    "0dc67c87-ed03-41cc-9803-76107b05cc72": {
+      "id": "0dc67c87-ed03-41cc-9803-76107b05cc72",
+      "name": "Path to CEO",
+      "target_role": "CEO",
+      "job_description": "A Chief Executive Officer (CEO) is the highest-ranking executive, responsible for setting the strategic vision, driving growth, and leading overall operations to ensure long-term profitability",
+      "created_at": "2026-02-17T20:17:56.092082",
+      "conflicts": [
+        {
+          "id": "conflict-1",
+          "description": "The user profile lacks experience in strategic leadership, financial management, and broad business operations, which are core responsibilities of a CEO.",
+          "severity": "CRITICAL",
+          "missing_skill": "Strategic Vision and Leadership",
+          "suggested_patch": {
+            "id": "patch-1",
+            "title": "Develop Strategic Leadership and Business Acumen",
+            "action_items": [
+              "Complete an MBA program or equivalent executive education.",
+              "Seek mentorship from experienced CEOs or senior executives.",
+              "Take on leadership roles in projects or volunteer organizations to practice strategic decision-making.",
+              "Read extensively on business strategy, finance, marketing, and operations."
+            ],
+            "estimated_hours": 5000,
+            "status": "OPEN",
+            "resources": [
+              "Harvard Business School Online - CORe (Certificate of Readiness for Business Education)",
+              "Coursera: MBA Essentials by University of Cape Town",
+              "Books: 'Good to Great' by Jim Collins, 'The Lean Startup' by Eric Ries",
+              "Mentorship programs offered by industry associations or professional networks."
+            ]
+          }
+        },
+        {
+          "id": "conflict-2",
+          "description": "The user profile is heavily focused on technical backend development and lacks experience in high-level decision-making, stakeholder management, and P&L responsibility.",
+          "severity": "CRITICAL",
+          "missing_skill": "Executive Decision Making and Financial Management",
+          "suggested_patch": {
+            "id": "patch-2",
+            "title": "Gain Executive Decision-Making and Financial Management Experience",
+            "action_items": [
+              "Pursue certifications in financial modeling and analysis.",
+              "Take courses on corporate finance and accounting.",
+              "Actively participate in budgeting and forecasting processes within current or future roles.",
+              "Seek opportunities to present business cases and financial projections to leadership.",
+              "Study case studies of successful and unsuccessful CEO decisions."
+            ],
+            "estimated_hours": 2000,
+            "status": "OPEN",
+            "resources": [
+              "Coursera: Financial Management Specialization by University of Illinois",
+              "edX: Corporate Finance by IIMBx",
+              "Books: 'Financial Intelligence for Entrepreneurs' by Karen Berman and Joe Knight",
+              "Online courses on platforms like Udemy or LinkedIn Learning for financial modeling."
+            ]
+          }
+        },
+        {
+          "id": "conflict-3",
+          "description": "While communication is listed, the depth and breadth required for a CEO, including public speaking, negotiation, and cross-functional communication at an executive level, are not specified.",
+          "severity": "WARNING",
+          "missing_skill": "Advanced Executive Communication and Negotiation",
+          "suggested_patch": {
+            "id": "patch-3",
+            "title": "Enhance Executive Communication and Negotiation Skills",
+            "action_items": [
+              "Join Toastmasters International to improve public speaking and presentation skills.",
+              "Take advanced negotiation workshops or courses.",
+              "Practice active listening and empathetic communication in all interactions.",
+              "Seek opportunities to lead meetings and present to diverse audiences.",
+              "Study communication strategies of successful leaders."
             ],
             "estimated_hours": 500,
             "status": "OPEN",
             "resources": [
-              "Coursera: Product Management Specialization",
-              "Udemy: The Complete Product Management Course",
-              "Product School: Certified Product Manager (CPM) Program",
-              "Books: 'Inspired: How to Create Tech Products Customers Love' by Marty Cagan, 'The Lean Startup' by Eric Ries"
-            ]
-          }
-        },
-        {
-          "id": "43a1fc37-f125-47e6-b691-05d17ead89fe",
-          "description": "The job description explicitly mentions 'Product Sense' as a required skill, which is not directly listed in the user's current skills.",
-          "severity": "WARNING",
-          "missing_skill": "Product Sense",
-          "suggested_patch": {
-            "id": "b6d9246f-f2d2-497b-84e2-f2a8c3273dee",
-            "title": "Develop Product Sense",
-            "action_items": [
-              "Analyze successful and unsuccessful products to understand the factors contributing to their success or failure.",
-              "Practice identifying user needs and pain points.",
-              "Develop the ability to translate business goals into product features.",
-              "Engage in case studies and problem-solving exercises related to product strategy.",
-              "Seek mentorship from experienced product managers."
-            ],
-            "estimated_hours": 150,
-            "status": "OPEN",
-            "resources": [
-              "Articles and blogs on product strategy and user empathy (e.g., Reforge, Mind the Product)",
-              "Product case study websites",
-              "Online courses focusing on user experience and product strategy"
-            ]
-          }
-        },
-        {
-          "id": "4576dcdd-95a9-4500-868f-e840ad34ace6",
-          "description": "The user profile lists 'Python, Django, REST APIs, SQL, Git, Communication' as skills. While SQL is mentioned in the job description, the core focus of the target role is Product Management, not Backend Development.",
-          "severity": "CRITICAL",
-          "missing_skill": "Product Management Core Skills",
-          "suggested_patch": {
-            "id": "30bc0078-c864-4dbf-99a1-2c63cdc49918",
-            "title": "Acquire Product Management Core Skills",
-            "action_items": [
-              "Complete a comprehensive Product Management certification or course.",
-              "Actively participate in product strategy discussions and contribute ideas.",
-              "Seek opportunities to shadow or work with Product Managers.",
-              "Build a portfolio of product-related projects or analyses."
-            ],
-            "estimated_hours": 400,
-            "status": "OPEN",
-            "resources": [
-              "Product School: Certified Product Manager (CPM)",
-              "General Assembly: Product Management Course",
-              "Books: 'Cracking the PM Interview' by Gayle Laakmann McDowell and Jackie Bavaro"
+              "Toastmasters International: www.toastmasters.org",
+              "Coursera: Successful Negotiation: Essential Strategies and Skills by University of Michigan",
+              "Books: 'Never Split the Difference' by Chris Voss",
+              "Workshops on executive presence and public speaking."
             ]
           }
         }
@@ -280,40 +377,40 @@
       "is_active": true
     }
   },
-  "active_branch_id": "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d",
+  "active_branch_id": "0dc67c87-ed03-41cc-9803-76107b05cc72",
   "history": [
     {
       "id": "commit-1",
-      "timestamp": "2026-02-07T10:24:00.247786",
+      "timestamp": "2026-02-07T11:02:27.457023",
       "message": "Initial Resume Upload",
       "parent_hash": null,
       "snapshot": {}
     },
     {
       "id": "commit-2",
-      "timestamp": "2026-02-07T10:54:00.247786",
+      "timestamp": "2026-02-07T11:32:27.457023",
       "message": "Created branch: AI Engineer",
       "parent_hash": "commit-1",
       "snapshot": {}
     },
     {
       "id": "commit-3",
-      "timestamp": "2026-02-07T11:24:00.247786",
+      "timestamp": "2026-02-07T12:02:27.457023",
       "message": "Created branch: Product Manager",
       "parent_hash": "commit-2",
       "snapshot": {}
     },
     {
       "id": "commit-4",
-      "timestamp": "2026-02-07T11:54:00.247786",
+      "timestamp": "2026-02-07T12:32:27.457023",
       "message": "Created branch: Full-Stack Engineer",
       "parent_hash": "commit-3",
       "snapshot": {}
     },
     {
-      "id": "627ca7c0-d132-448b-9c1e-109f78f9bd16",
-      "timestamp": "2026-02-07T12:33:25.805901",
-      "message": "Created branch: CTO",
+      "id": "ecd4976f-9e81-4707-ad70-f8408c274d35",
+      "timestamp": "2026-02-07T13:26:12.438455",
+      "message": "Resolved conflict: PyTorch",
       "parent_hash": "commit-4",
       "snapshot": {
         "user_id": "demo-user",
@@ -353,6 +450,11 @@
             "name": "Communication",
             "category": "Soft",
             "proficiency": 0.7
+          },
+          {
+            "name": "PyTorch",
+            "category": "Hard",
+            "proficiency": 0.8
           }
         ],
         "branches": {
@@ -361,7 +463,7 @@
             "name": "Current: Backend Dev",
             "target_role": "Senior Backend Engineer",
             "job_description": null,
-            "created_at": "2026-02-07T12:24:00.247786",
+            "created_at": "2026-02-07T13:02:27.457023",
             "conflicts": [],
             "is_active": false
           },
@@ -370,32 +472,15 @@
             "name": "Pivot to AI",
             "target_role": "AI Engineer",
             "job_description": "Build and deploy ML models at scale. Requires PyTorch, MLOps.",
-            "created_at": "2026-02-07T12:24:00.247786",
+            "created_at": "2026-02-07T13:02:27.457023",
             "conflicts": [
-              {
-                "id": "c1",
-                "description": "Missing core ML framework knowledge.",
-                "severity": "CRITICAL",
-                "missing_skill": "PyTorch",
-                "suggested_patch": {
-                  "id": "9d6f6b40-f536-4c2f-819f-6757acae06d0",
-                  "title": "Learn PyTorch Basics",
-                  "action_items": [
-                    "Complete PyTorch Blitz tutorial",
-                    "Build a simple CNN"
-                  ],
-                  "estimated_hours": 20,
-                  "status": "OPEN",
-                  "resources": []
-                }
-              },
               {
                 "id": "c2",
                 "description": "Lack of theoretical foundation in Deep Learning.",
                 "severity": "WARNING",
                 "missing_skill": "Neural Networks",
                 "suggested_patch": {
-                  "id": "9699ee68-43ae-48c8-a809-461a3c7f039f",
+                  "id": "a1493298-2b7d-4112-a38a-85cfc6f80350",
                   "title": "Deep Learning Specialization",
                   "action_items": [
                     "Watch Andrew Ng's course",
@@ -412,7 +497,7 @@
                 "severity": "CRITICAL",
                 "missing_skill": "MLOps",
                 "suggested_patch": {
-                  "id": "00933c15-8863-478f-b26c-0caad2263af5",
+                  "id": "0d06601f-d798-47b8-9d16-97b91fc0cf50",
                   "title": "MLOps Fundamentals",
                   "action_items": [
                     "Learn MLflow",
@@ -424,14 +509,14 @@
                 }
               }
             ],
-            "is_active": false
+            "is_active": true
           },
           "feature-pm": {
             "id": "feature-pm",
             "name": "Pivot to PM",
             "target_role": "Product Manager",
             "job_description": "Lead product strategy and execution for AI products.",
-            "created_at": "2026-02-07T12:24:00.247786",
+            "created_at": "2026-02-07T13:02:27.457023",
             "conflicts": [
               {
                 "id": "c3",
@@ -439,7 +524,7 @@
                 "severity": "CRITICAL",
                 "missing_skill": "Mixpanel",
                 "suggested_patch": {
-                  "id": "17e4a3ab-43d1-4a5d-bc9f-287e159038a4",
+                  "id": "21f0d4c5-9eb7-4f70-876c-a48e5e2bd35e",
                   "title": "Product Analytics 101",
                   "action_items": [
                     "Learn funnel analysis",
@@ -456,7 +541,7 @@
                 "severity": "WARNING",
                 "missing_skill": "Stakeholder Management",
                 "suggested_patch": {
-                  "id": "fbd4e4bb-d118-4792-9a0e-860d09a13618",
+                  "id": "caa4eb0b-dabc-4f4c-834f-009fcecbbbbd",
                   "title": "Leadership Skills",
                   "action_items": [
                     "Read 'The Mom Test'",
@@ -475,7 +560,7 @@
             "name": "Go Full-Stack",
             "target_role": "Full-Stack Engineer",
             "job_description": "Build end-to-end features. Requires React, Node.js.",
-            "created_at": "2026-02-07T12:24:00.247786",
+            "created_at": "2026-02-07T13:02:27.457023",
             "conflicts": [
               {
                 "id": "c6",
@@ -483,7 +568,7 @@
                 "severity": "CRITICAL",
                 "missing_skill": "React",
                 "suggested_patch": {
-                  "id": "b03637cf-eea2-4445-a901-8a7b8ae6ce98",
+                  "id": "a7d0d060-406e-4e77-b200-13662d4e4413",
                   "title": "React Crash Course",
                   "action_items": [
                     "Complete React official tutorial",
@@ -500,7 +585,204 @@
                 "severity": "WARNING",
                 "missing_skill": "Node.js",
                 "suggested_patch": {
-                  "id": "48bb2bd4-d3d5-4f25-afbd-b1556fe48595",
+                  "id": "4f3ace6b-43eb-41a1-be00-8b95afeb9056",
+                  "title": "Node.js Essentials",
+                  "action_items": [
+                    "Build Express.js API",
+                    "Learn async patterns"
+                  ],
+                  "estimated_hours": 20,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          }
+        },
+        "active_branch_id": "feature-ai-engineer",
+        "meta": {}
+      }
+    },
+    {
+      "id": "98f9eaac-1c78-4388-8667-f7f7ecf2cfc1",
+      "timestamp": "2026-02-07T13:27:01.362264",
+      "message": "Created branch: AI Product Manager",
+      "parent_hash": "ecd4976f-9e81-4707-ad70-f8408c274d35",
+      "snapshot": {
+        "user_id": "demo-user",
+        "full_name": "Alex Chen",
+        "current_role": "Backend Developer",
+        "experience": [
+          "Software Engineer Intern @ Google",
+          "Junior Python Developer @ Startup"
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "category": "Hard",
+            "proficiency": 0.9
+          },
+          {
+            "name": "Django",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "REST APIs",
+            "category": "Hard",
+            "proficiency": 0.85
+          },
+          {
+            "name": "SQL",
+            "category": "Hard",
+            "proficiency": 0.75
+          },
+          {
+            "name": "Git",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "Communication",
+            "category": "Soft",
+            "proficiency": 0.7
+          },
+          {
+            "name": "PyTorch",
+            "category": "Hard",
+            "proficiency": 0.8
+          }
+        ],
+        "branches": {
+          "main": {
+            "id": "main",
+            "name": "Current: Backend Dev",
+            "target_role": "Senior Backend Engineer",
+            "job_description": null,
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [],
+            "is_active": false
+          },
+          "feature-ai-engineer": {
+            "id": "feature-ai-engineer",
+            "name": "Pivot to AI",
+            "target_role": "AI Engineer",
+            "job_description": "Build and deploy ML models at scale. Requires PyTorch, MLOps.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c2",
+                "description": "Lack of theoretical foundation in Deep Learning.",
+                "severity": "WARNING",
+                "missing_skill": "Neural Networks",
+                "suggested_patch": {
+                  "id": "a1493298-2b7d-4112-a38a-85cfc6f80350",
+                  "title": "Deep Learning Specialization",
+                  "action_items": [
+                    "Watch Andrew Ng's course",
+                    "Implement backprop from scratch"
+                  ],
+                  "estimated_hours": 40,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c5",
+                "description": "No experience with ML deployment pipelines.",
+                "severity": "CRITICAL",
+                "missing_skill": "MLOps",
+                "suggested_patch": {
+                  "id": "0d06601f-d798-47b8-9d16-97b91fc0cf50",
+                  "title": "MLOps Fundamentals",
+                  "action_items": [
+                    "Learn MLflow",
+                    "Deploy model to AWS SageMaker"
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-pm": {
+            "id": "feature-pm",
+            "name": "Pivot to PM",
+            "target_role": "Product Manager",
+            "job_description": "Lead product strategy and execution for AI products.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c3",
+                "description": "No experience with product analytics tools.",
+                "severity": "CRITICAL",
+                "missing_skill": "Mixpanel",
+                "suggested_patch": {
+                  "id": "21f0d4c5-9eb7-4f70-876c-a48e5e2bd35e",
+                  "title": "Product Analytics 101",
+                  "action_items": [
+                    "Learn funnel analysis",
+                    "Setup a mock dashboard"
+                  ],
+                  "estimated_hours": 10,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c4",
+                "description": "Need to improve stakeholder management.",
+                "severity": "WARNING",
+                "missing_skill": "Stakeholder Management",
+                "suggested_patch": {
+                  "id": "caa4eb0b-dabc-4f4c-834f-009fcecbbbbd",
+                  "title": "Leadership Skills",
+                  "action_items": [
+                    "Read 'The Mom Test'",
+                    "Practice user interviews"
+                  ],
+                  "estimated_hours": 15,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-fullstack": {
+            "id": "feature-fullstack",
+            "name": "Go Full-Stack",
+            "target_role": "Full-Stack Engineer",
+            "job_description": "Build end-to-end features. Requires React, Node.js.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c6",
+                "description": "No frontend framework experience.",
+                "severity": "CRITICAL",
+                "missing_skill": "React",
+                "suggested_patch": {
+                  "id": "a7d0d060-406e-4e77-b200-13662d4e4413",
+                  "title": "React Crash Course",
+                  "action_items": [
+                    "Complete React official tutorial",
+                    "Build a TODO app"
+                  ],
+                  "estimated_hours": 25,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c7",
+                "description": "Limited Node.js backend experience.",
+                "severity": "WARNING",
+                "missing_skill": "Node.js",
+                "suggested_patch": {
+                  "id": "4f3ace6b-43eb-41a1-be00-8b95afeb9056",
                   "title": "Node.js Essentials",
                   "action_items": [
                     "Build Express.js API",
@@ -514,82 +796,107 @@
             ],
             "is_active": false
           },
-          "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d": {
-            "id": "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d",
-            "name": "Path to CTO",
-            "target_role": "CTO",
-            "job_description": "Looking for a PM with SQL and Product Sense.",
-            "created_at": "2026-02-07T12:33:25.805823",
+          "38254261-318b-4012-b711-39201c32d40d": {
+            "id": "38254261-318b-4012-b711-39201c32d40d",
+            "name": "Path to AI Product Manager",
+            "target_role": "AI Product Manager",
+            "job_description": "Manage and perform all process oriented functions for an AI product",
+            "created_at": "2026-02-07T13:27:01.362212",
             "conflicts": [
               {
-                "id": "27af8d34-771f-4716-92a4-eef0aad01b0a",
-                "description": "The target role is for a Product Manager, but the user profile is for a Backend Developer. There is a significant mismatch in the core responsibilities and required skill sets.",
+                "id": "conflict_1",
+                "description": "The user profile lacks experience in product management methodologies, agile frameworks, and understanding of the product lifecycle, which are crucial for an AI Product Manager role.",
                 "severity": "CRITICAL",
-                "missing_skill": "Product Management",
+                "missing_skill": "Product Management Fundamentals",
                 "suggested_patch": {
-                  "id": "8fc2e01e-9061-4b9b-ad31-0f8a4210c3e5",
-                  "title": "Transition to Product Management",
+                  "id": "patch_1",
+                  "title": "Develop Product Management Fundamentals",
                   "action_items": [
-                    "Understand the core principles of Product Management.",
-                    "Learn about product lifecycle, market research, user story creation, and roadmap planning.",
-                    "Gain experience in user research and customer feedback analysis.",
-                    "Develop skills in stakeholder management and cross-functional collaboration.",
-                    "Seek opportunities to contribute to product-related discussions and initiatives within the current role or through side projects."
+                    "Study core product management principles, including market research, user empathy, and roadmap development.",
+                    "Learn about agile methodologies (Scrum, Kanban) and their application in product development.",
+                    "Understand the product lifecycle from ideation to launch and iteration.",
+                    "Familiarize with AI product-specific considerations like data strategy, ethical AI, and model deployment."
                   ],
-                  "estimated_hours": 500,
+                  "estimated_hours": 80,
                   "status": "OPEN",
                   "resources": [
                     "Coursera: Product Management Specialization",
-                    "Udemy: The Complete Product Management Course",
+                    "Udemy: Agile Product Management Course",
                     "Product School: Certified Product Manager (CPM) Program",
-                    "Books: 'Inspired: How to Create Tech Products Customers Love' by Marty Cagan, 'The Lean Startup' by Eric Ries"
+                    "Book: Inspired by Marty Cagan"
                   ]
                 }
               },
               {
-                "id": "43a1fc37-f125-47e6-b691-05d17ead89fe",
-                "description": "The job description explicitly mentions 'Product Sense' as a required skill, which is not directly listed in the user's current skills.",
-                "severity": "WARNING",
-                "missing_skill": "Product Sense",
-                "suggested_patch": {
-                  "id": "b6d9246f-f2d2-497b-84e2-f2a8c3273dee",
-                  "title": "Develop Product Sense",
-                  "action_items": [
-                    "Analyze successful and unsuccessful products to understand the factors contributing to their success or failure.",
-                    "Practice identifying user needs and pain points.",
-                    "Develop the ability to translate business goals into product features.",
-                    "Engage in case studies and problem-solving exercises related to product strategy.",
-                    "Seek mentorship from experienced product managers."
-                  ],
-                  "estimated_hours": 150,
-                  "status": "OPEN",
-                  "resources": [
-                    "Articles and blogs on product strategy and user empathy (e.g., Reforge, Mind the Product)",
-                    "Product case study websites",
-                    "Online courses focusing on user experience and product strategy"
-                  ]
-                }
-              },
-              {
-                "id": "4576dcdd-95a9-4500-868f-e840ad34ace6",
-                "description": "The user profile lists 'Python, Django, REST APIs, SQL, Git, Communication' as skills. While SQL is mentioned in the job description, the core focus of the target role is Product Management, not Backend Development.",
+                "id": "conflict_2",
+                "description": "While the user has Python and PyTorch skills, the target role requires a broader understanding of AI/ML concepts from a product perspective, including model evaluation, deployment strategies, and understanding different AI techniques beyond just implementation.",
                 "severity": "CRITICAL",
-                "missing_skill": "Product Management Core Skills",
+                "missing_skill": "AI/ML Product Strategy & Lifecycle",
                 "suggested_patch": {
-                  "id": "30bc0078-c864-4dbf-99a1-2c63cdc49918",
-                  "title": "Acquire Product Management Core Skills",
+                  "id": "patch_2",
+                  "title": "Gain AI/ML Product Strategy Expertise",
                   "action_items": [
-                    "Complete a comprehensive Product Management certification or course.",
-                    "Actively participate in product strategy discussions and contribute ideas.",
-                    "Seek opportunities to shadow or work with Product Managers.",
-                    "Build a portfolio of product-related projects or analyses."
+                    "Learn about different AI/ML models and their use cases in product development.",
+                    "Understand how to define AI product requirements and success metrics.",
+                    "Study AI model evaluation techniques and interpretability.",
+                    "Explore AI deployment strategies and MLOps concepts.",
+                    "Research ethical considerations and bias in AI products."
                   ],
-                  "estimated_hours": 400,
+                  "estimated_hours": 100,
                   "status": "OPEN",
                   "resources": [
-                    "Product School: Certified Product Manager (CPM)",
-                    "General Assembly: Product Management Course",
-                    "Books: 'Cracking the PM Interview' by Gayle Laakmann McDowell and Jackie Bavaro"
+                    "Coursera: AI for Everyone by Andrew Ng",
+                    "edX: AI Product Management MicroMasters Program",
+                    "Google AI: Responsible AI Practices",
+                    "Kaggle: Learn and explore AI/ML projects"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_3",
+                "description": "The user profile indicates backend development skills but lacks direct experience in stakeholder management, market analysis, and go-to-market strategies, which are essential for a Product Manager.",
+                "severity": "CRITICAL",
+                "missing_skill": "Business Acumen & Stakeholder Management",
+                "suggested_patch": {
+                  "id": "patch_3",
+                  "title": "Develop Business Acumen and Stakeholder Management Skills",
+                  "action_items": [
+                    "Learn about market research techniques and competitive analysis.",
+                    "Understand business strategy, P&L, and ROI concepts.",
+                    "Practice stakeholder identification, analysis, and communication strategies.",
+                    "Develop skills in user story mapping and backlog prioritization.",
+                    "Gain experience in presenting product vision and strategy to diverse audiences."
+                  ],
+                  "estimated_hours": 60,
+                  "status": "OPEN",
+                  "resources": [
+                    "Udemy: Product Management: From Vision to Execution",
+                    "LinkedIn Learning: Product Management Courses",
+                    "Book: The Lean Startup by Eric Ries",
+                    "Harvard Business Review: Articles on Strategy and Management"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_4",
+                "description": "While communication is listed as a skill, product management requires specific communication styles for different audiences (technical teams, business stakeholders, customers) and effective presentation skills.",
+                "severity": "WARNING",
+                "missing_skill": "Product-Specific Communication & Presentation",
+                "suggested_patch": {
+                  "id": "patch_4",
+                  "title": "Enhance Product-Specific Communication and Presentation Skills",
+                  "action_items": [
+                    "Practice articulating technical concepts to non-technical audiences.",
+                    "Develop skills in creating compelling product presentations and demos.",
+                    "Learn techniques for effective negotiation and conflict resolution with stakeholders.",
+                    "Seek opportunities to present project updates or product ideas in team meetings."
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": [
+                    "Toastmasters International",
+                    "Coursera: Presentation Skills Training",
+                    "Book: Crucial Conversations"
                   ]
                 }
               }
@@ -597,7 +904,1152 @@
             "is_active": true
           }
         },
-        "active_branch_id": "d5b48b13-5ec2-4c1b-ae59-1056f621cf7d",
+        "active_branch_id": "38254261-318b-4012-b711-39201c32d40d",
+        "meta": {}
+      }
+    },
+    {
+      "id": "95c28d76-2e8b-4fa6-a28a-ff79372c0ae6",
+      "timestamp": "2026-02-17T20:17:56.092188",
+      "message": "Created branch: CEO",
+      "parent_hash": "98f9eaac-1c78-4388-8667-f7f7ecf2cfc1",
+      "snapshot": {
+        "user_id": "demo-user",
+        "full_name": "Alex Chen",
+        "current_role": "Backend Developer",
+        "experience": [
+          "Software Engineer Intern @ Google",
+          "Junior Python Developer @ Startup"
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "category": "Hard",
+            "proficiency": 0.9
+          },
+          {
+            "name": "Django",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "REST APIs",
+            "category": "Hard",
+            "proficiency": 0.85
+          },
+          {
+            "name": "SQL",
+            "category": "Hard",
+            "proficiency": 0.75
+          },
+          {
+            "name": "Git",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "Communication",
+            "category": "Soft",
+            "proficiency": 0.7
+          },
+          {
+            "name": "PyTorch",
+            "category": "Hard",
+            "proficiency": 0.8
+          }
+        ],
+        "branches": {
+          "main": {
+            "id": "main",
+            "name": "Current: Backend Dev",
+            "target_role": "Senior Backend Engineer",
+            "job_description": null,
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [],
+            "is_active": false
+          },
+          "feature-ai-engineer": {
+            "id": "feature-ai-engineer",
+            "name": "Pivot to AI",
+            "target_role": "AI Engineer",
+            "job_description": "Build and deploy ML models at scale. Requires PyTorch, MLOps.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c2",
+                "description": "Lack of theoretical foundation in Deep Learning.",
+                "severity": "WARNING",
+                "missing_skill": "Neural Networks",
+                "suggested_patch": {
+                  "id": "a1493298-2b7d-4112-a38a-85cfc6f80350",
+                  "title": "Deep Learning Specialization",
+                  "action_items": [
+                    "Watch Andrew Ng's course",
+                    "Implement backprop from scratch"
+                  ],
+                  "estimated_hours": 40,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c5",
+                "description": "No experience with ML deployment pipelines.",
+                "severity": "CRITICAL",
+                "missing_skill": "MLOps",
+                "suggested_patch": {
+                  "id": "0d06601f-d798-47b8-9d16-97b91fc0cf50",
+                  "title": "MLOps Fundamentals",
+                  "action_items": [
+                    "Learn MLflow",
+                    "Deploy model to AWS SageMaker"
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-pm": {
+            "id": "feature-pm",
+            "name": "Pivot to PM",
+            "target_role": "Product Manager",
+            "job_description": "Lead product strategy and execution for AI products.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c3",
+                "description": "No experience with product analytics tools.",
+                "severity": "CRITICAL",
+                "missing_skill": "Mixpanel",
+                "suggested_patch": {
+                  "id": "21f0d4c5-9eb7-4f70-876c-a48e5e2bd35e",
+                  "title": "Product Analytics 101",
+                  "action_items": [
+                    "Learn funnel analysis",
+                    "Setup a mock dashboard"
+                  ],
+                  "estimated_hours": 10,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c4",
+                "description": "Need to improve stakeholder management.",
+                "severity": "WARNING",
+                "missing_skill": "Stakeholder Management",
+                "suggested_patch": {
+                  "id": "caa4eb0b-dabc-4f4c-834f-009fcecbbbbd",
+                  "title": "Leadership Skills",
+                  "action_items": [
+                    "Read 'The Mom Test'",
+                    "Practice user interviews"
+                  ],
+                  "estimated_hours": 15,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-fullstack": {
+            "id": "feature-fullstack",
+            "name": "Go Full-Stack",
+            "target_role": "Full-Stack Engineer",
+            "job_description": "Build end-to-end features. Requires React, Node.js.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c6",
+                "description": "No frontend framework experience.",
+                "severity": "CRITICAL",
+                "missing_skill": "React",
+                "suggested_patch": {
+                  "id": "a7d0d060-406e-4e77-b200-13662d4e4413",
+                  "title": "React Crash Course",
+                  "action_items": [
+                    "Complete React official tutorial",
+                    "Build a TODO app"
+                  ],
+                  "estimated_hours": 25,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c7",
+                "description": "Limited Node.js backend experience.",
+                "severity": "WARNING",
+                "missing_skill": "Node.js",
+                "suggested_patch": {
+                  "id": "4f3ace6b-43eb-41a1-be00-8b95afeb9056",
+                  "title": "Node.js Essentials",
+                  "action_items": [
+                    "Build Express.js API",
+                    "Learn async patterns"
+                  ],
+                  "estimated_hours": 20,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "38254261-318b-4012-b711-39201c32d40d": {
+            "id": "38254261-318b-4012-b711-39201c32d40d",
+            "name": "Path to AI Product Manager",
+            "target_role": "AI Product Manager",
+            "job_description": "Manage and perform all process oriented functions for an AI product",
+            "created_at": "2026-02-07T13:27:01.362212",
+            "conflicts": [
+              {
+                "id": "conflict_1",
+                "description": "The user profile lacks experience in product management methodologies, agile frameworks, and understanding of the product lifecycle, which are crucial for an AI Product Manager role.",
+                "severity": "CRITICAL",
+                "missing_skill": "Product Management Fundamentals",
+                "suggested_patch": {
+                  "id": "patch_1",
+                  "title": "Develop Product Management Fundamentals",
+                  "action_items": [
+                    "Study core product management principles, including market research, user empathy, and roadmap development.",
+                    "Learn about agile methodologies (Scrum, Kanban) and their application in product development.",
+                    "Understand the product lifecycle from ideation to launch and iteration.",
+                    "Familiarize with AI product-specific considerations like data strategy, ethical AI, and model deployment."
+                  ],
+                  "estimated_hours": 80,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: Product Management Specialization",
+                    "Udemy: Agile Product Management Course",
+                    "Product School: Certified Product Manager (CPM) Program",
+                    "Book: Inspired by Marty Cagan"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_2",
+                "description": "While the user has Python and PyTorch skills, the target role requires a broader understanding of AI/ML concepts from a product perspective, including model evaluation, deployment strategies, and understanding different AI techniques beyond just implementation.",
+                "severity": "CRITICAL",
+                "missing_skill": "AI/ML Product Strategy & Lifecycle",
+                "suggested_patch": {
+                  "id": "patch_2",
+                  "title": "Gain AI/ML Product Strategy Expertise",
+                  "action_items": [
+                    "Learn about different AI/ML models and their use cases in product development.",
+                    "Understand how to define AI product requirements and success metrics.",
+                    "Study AI model evaluation techniques and interpretability.",
+                    "Explore AI deployment strategies and MLOps concepts.",
+                    "Research ethical considerations and bias in AI products."
+                  ],
+                  "estimated_hours": 100,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: AI for Everyone by Andrew Ng",
+                    "edX: AI Product Management MicroMasters Program",
+                    "Google AI: Responsible AI Practices",
+                    "Kaggle: Learn and explore AI/ML projects"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_3",
+                "description": "The user profile indicates backend development skills but lacks direct experience in stakeholder management, market analysis, and go-to-market strategies, which are essential for a Product Manager.",
+                "severity": "CRITICAL",
+                "missing_skill": "Business Acumen & Stakeholder Management",
+                "suggested_patch": {
+                  "id": "patch_3",
+                  "title": "Develop Business Acumen and Stakeholder Management Skills",
+                  "action_items": [
+                    "Learn about market research techniques and competitive analysis.",
+                    "Understand business strategy, P&L, and ROI concepts.",
+                    "Practice stakeholder identification, analysis, and communication strategies.",
+                    "Develop skills in user story mapping and backlog prioritization.",
+                    "Gain experience in presenting product vision and strategy to diverse audiences."
+                  ],
+                  "estimated_hours": 60,
+                  "status": "OPEN",
+                  "resources": [
+                    "Udemy: Product Management: From Vision to Execution",
+                    "LinkedIn Learning: Product Management Courses",
+                    "Book: The Lean Startup by Eric Ries",
+                    "Harvard Business Review: Articles on Strategy and Management"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_4",
+                "description": "While communication is listed as a skill, product management requires specific communication styles for different audiences (technical teams, business stakeholders, customers) and effective presentation skills.",
+                "severity": "WARNING",
+                "missing_skill": "Product-Specific Communication & Presentation",
+                "suggested_patch": {
+                  "id": "patch_4",
+                  "title": "Enhance Product-Specific Communication and Presentation Skills",
+                  "action_items": [
+                    "Practice articulating technical concepts to non-technical audiences.",
+                    "Develop skills in creating compelling product presentations and demos.",
+                    "Learn techniques for effective negotiation and conflict resolution with stakeholders.",
+                    "Seek opportunities to present project updates or product ideas in team meetings."
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": [
+                    "Toastmasters International",
+                    "Coursera: Presentation Skills Training",
+                    "Book: Crucial Conversations"
+                  ]
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "0dc67c87-ed03-41cc-9803-76107b05cc72": {
+            "id": "0dc67c87-ed03-41cc-9803-76107b05cc72",
+            "name": "Path to CEO",
+            "target_role": "CEO",
+            "job_description": "A Chief Executive Officer (CEO) is the highest-ranking executive, responsible for setting the strategic vision, driving growth, and leading overall operations to ensure long-term profitability",
+            "created_at": "2026-02-17T20:17:56.092082",
+            "conflicts": [
+              {
+                "id": "conflict-1",
+                "description": "The user profile lacks experience in strategic leadership, financial management, and broad business operations, which are core responsibilities of a CEO.",
+                "severity": "CRITICAL",
+                "missing_skill": "Strategic Vision and Leadership",
+                "suggested_patch": {
+                  "id": "patch-1",
+                  "title": "Develop Strategic Leadership and Business Acumen",
+                  "action_items": [
+                    "Complete an MBA program or equivalent executive education.",
+                    "Seek mentorship from experienced CEOs or senior executives.",
+                    "Take on leadership roles in projects or volunteer organizations to practice strategic decision-making.",
+                    "Read extensively on business strategy, finance, marketing, and operations."
+                  ],
+                  "estimated_hours": 5000,
+                  "status": "OPEN",
+                  "resources": [
+                    "Harvard Business School Online - CORe (Certificate of Readiness for Business Education)",
+                    "Coursera: MBA Essentials by University of Cape Town",
+                    "Books: 'Good to Great' by Jim Collins, 'The Lean Startup' by Eric Ries",
+                    "Mentorship programs offered by industry associations or professional networks."
+                  ]
+                }
+              },
+              {
+                "id": "conflict-2",
+                "description": "The user profile is heavily focused on technical backend development and lacks experience in high-level decision-making, stakeholder management, and P&L responsibility.",
+                "severity": "CRITICAL",
+                "missing_skill": "Executive Decision Making and Financial Management",
+                "suggested_patch": {
+                  "id": "patch-2",
+                  "title": "Gain Executive Decision-Making and Financial Management Experience",
+                  "action_items": [
+                    "Pursue certifications in financial modeling and analysis.",
+                    "Take courses on corporate finance and accounting.",
+                    "Actively participate in budgeting and forecasting processes within current or future roles.",
+                    "Seek opportunities to present business cases and financial projections to leadership.",
+                    "Study case studies of successful and unsuccessful CEO decisions."
+                  ],
+                  "estimated_hours": 2000,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: Financial Management Specialization by University of Illinois",
+                    "edX: Corporate Finance by IIMBx",
+                    "Books: 'Financial Intelligence for Entrepreneurs' by Karen Berman and Joe Knight",
+                    "Online courses on platforms like Udemy or LinkedIn Learning for financial modeling."
+                  ]
+                }
+              },
+              {
+                "id": "conflict-3",
+                "description": "While communication is listed, the depth and breadth required for a CEO, including public speaking, negotiation, and cross-functional communication at an executive level, are not specified.",
+                "severity": "WARNING",
+                "missing_skill": "Advanced Executive Communication and Negotiation",
+                "suggested_patch": {
+                  "id": "patch-3",
+                  "title": "Enhance Executive Communication and Negotiation Skills",
+                  "action_items": [
+                    "Join Toastmasters International to improve public speaking and presentation skills.",
+                    "Take advanced negotiation workshops or courses.",
+                    "Practice active listening and empathetic communication in all interactions.",
+                    "Seek opportunities to lead meetings and present to diverse audiences.",
+                    "Study communication strategies of successful leaders."
+                  ],
+                  "estimated_hours": 500,
+                  "status": "OPEN",
+                  "resources": [
+                    "Toastmasters International: www.toastmasters.org",
+                    "Coursera: Successful Negotiation: Essential Strategies and Skills by University of Michigan",
+                    "Books: 'Never Split the Difference' by Chris Voss",
+                    "Workshops on executive presence and public speaking."
+                  ]
+                }
+              }
+            ],
+            "is_active": true
+          }
+        },
+        "active_branch_id": "0dc67c87-ed03-41cc-9803-76107b05cc72",
+        "meta": {}
+      }
+    },
+    {
+      "id": "76a716ad-5e01-47b2-9b3a-968a9cf7d41a",
+      "timestamp": "2026-02-17T20:18:50.226332",
+      "message": "Resolved conflict: Strategic Vision and Leadership",
+      "parent_hash": "95c28d76-2e8b-4fa6-a28a-ff79372c0ae6",
+      "snapshot": {
+        "user_id": "demo-user",
+        "full_name": "Alex Chen",
+        "current_role": "Backend Developer",
+        "experience": [
+          "Software Engineer Intern @ Google",
+          "Junior Python Developer @ Startup"
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "category": "Hard",
+            "proficiency": 0.9
+          },
+          {
+            "name": "Django",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "REST APIs",
+            "category": "Hard",
+            "proficiency": 0.85
+          },
+          {
+            "name": "SQL",
+            "category": "Hard",
+            "proficiency": 0.75
+          },
+          {
+            "name": "Git",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "Communication",
+            "category": "Soft",
+            "proficiency": 0.7
+          },
+          {
+            "name": "PyTorch",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "Strategic Vision and Leadership",
+            "category": "Hard",
+            "proficiency": 0.8
+          }
+        ],
+        "branches": {
+          "main": {
+            "id": "main",
+            "name": "Current: Backend Dev",
+            "target_role": "Senior Backend Engineer",
+            "job_description": null,
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [],
+            "is_active": false
+          },
+          "feature-ai-engineer": {
+            "id": "feature-ai-engineer",
+            "name": "Pivot to AI",
+            "target_role": "AI Engineer",
+            "job_description": "Build and deploy ML models at scale. Requires PyTorch, MLOps.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c2",
+                "description": "Lack of theoretical foundation in Deep Learning.",
+                "severity": "WARNING",
+                "missing_skill": "Neural Networks",
+                "suggested_patch": {
+                  "id": "a1493298-2b7d-4112-a38a-85cfc6f80350",
+                  "title": "Deep Learning Specialization",
+                  "action_items": [
+                    "Watch Andrew Ng's course",
+                    "Implement backprop from scratch"
+                  ],
+                  "estimated_hours": 40,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c5",
+                "description": "No experience with ML deployment pipelines.",
+                "severity": "CRITICAL",
+                "missing_skill": "MLOps",
+                "suggested_patch": {
+                  "id": "0d06601f-d798-47b8-9d16-97b91fc0cf50",
+                  "title": "MLOps Fundamentals",
+                  "action_items": [
+                    "Learn MLflow",
+                    "Deploy model to AWS SageMaker"
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-pm": {
+            "id": "feature-pm",
+            "name": "Pivot to PM",
+            "target_role": "Product Manager",
+            "job_description": "Lead product strategy and execution for AI products.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c3",
+                "description": "No experience with product analytics tools.",
+                "severity": "CRITICAL",
+                "missing_skill": "Mixpanel",
+                "suggested_patch": {
+                  "id": "21f0d4c5-9eb7-4f70-876c-a48e5e2bd35e",
+                  "title": "Product Analytics 101",
+                  "action_items": [
+                    "Learn funnel analysis",
+                    "Setup a mock dashboard"
+                  ],
+                  "estimated_hours": 10,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c4",
+                "description": "Need to improve stakeholder management.",
+                "severity": "WARNING",
+                "missing_skill": "Stakeholder Management",
+                "suggested_patch": {
+                  "id": "caa4eb0b-dabc-4f4c-834f-009fcecbbbbd",
+                  "title": "Leadership Skills",
+                  "action_items": [
+                    "Read 'The Mom Test'",
+                    "Practice user interviews"
+                  ],
+                  "estimated_hours": 15,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-fullstack": {
+            "id": "feature-fullstack",
+            "name": "Go Full-Stack",
+            "target_role": "Full-Stack Engineer",
+            "job_description": "Build end-to-end features. Requires React, Node.js.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c6",
+                "description": "No frontend framework experience.",
+                "severity": "CRITICAL",
+                "missing_skill": "React",
+                "suggested_patch": {
+                  "id": "a7d0d060-406e-4e77-b200-13662d4e4413",
+                  "title": "React Crash Course",
+                  "action_items": [
+                    "Complete React official tutorial",
+                    "Build a TODO app"
+                  ],
+                  "estimated_hours": 25,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c7",
+                "description": "Limited Node.js backend experience.",
+                "severity": "WARNING",
+                "missing_skill": "Node.js",
+                "suggested_patch": {
+                  "id": "4f3ace6b-43eb-41a1-be00-8b95afeb9056",
+                  "title": "Node.js Essentials",
+                  "action_items": [
+                    "Build Express.js API",
+                    "Learn async patterns"
+                  ],
+                  "estimated_hours": 20,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "38254261-318b-4012-b711-39201c32d40d": {
+            "id": "38254261-318b-4012-b711-39201c32d40d",
+            "name": "Path to AI Product Manager",
+            "target_role": "AI Product Manager",
+            "job_description": "Manage and perform all process oriented functions for an AI product",
+            "created_at": "2026-02-07T13:27:01.362212",
+            "conflicts": [
+              {
+                "id": "conflict_1",
+                "description": "The user profile lacks experience in product management methodologies, agile frameworks, and understanding of the product lifecycle, which are crucial for an AI Product Manager role.",
+                "severity": "CRITICAL",
+                "missing_skill": "Product Management Fundamentals",
+                "suggested_patch": {
+                  "id": "patch_1",
+                  "title": "Develop Product Management Fundamentals",
+                  "action_items": [
+                    "Study core product management principles, including market research, user empathy, and roadmap development.",
+                    "Learn about agile methodologies (Scrum, Kanban) and their application in product development.",
+                    "Understand the product lifecycle from ideation to launch and iteration.",
+                    "Familiarize with AI product-specific considerations like data strategy, ethical AI, and model deployment."
+                  ],
+                  "estimated_hours": 80,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: Product Management Specialization",
+                    "Udemy: Agile Product Management Course",
+                    "Product School: Certified Product Manager (CPM) Program",
+                    "Book: Inspired by Marty Cagan"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_2",
+                "description": "While the user has Python and PyTorch skills, the target role requires a broader understanding of AI/ML concepts from a product perspective, including model evaluation, deployment strategies, and understanding different AI techniques beyond just implementation.",
+                "severity": "CRITICAL",
+                "missing_skill": "AI/ML Product Strategy & Lifecycle",
+                "suggested_patch": {
+                  "id": "patch_2",
+                  "title": "Gain AI/ML Product Strategy Expertise",
+                  "action_items": [
+                    "Learn about different AI/ML models and their use cases in product development.",
+                    "Understand how to define AI product requirements and success metrics.",
+                    "Study AI model evaluation techniques and interpretability.",
+                    "Explore AI deployment strategies and MLOps concepts.",
+                    "Research ethical considerations and bias in AI products."
+                  ],
+                  "estimated_hours": 100,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: AI for Everyone by Andrew Ng",
+                    "edX: AI Product Management MicroMasters Program",
+                    "Google AI: Responsible AI Practices",
+                    "Kaggle: Learn and explore AI/ML projects"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_3",
+                "description": "The user profile indicates backend development skills but lacks direct experience in stakeholder management, market analysis, and go-to-market strategies, which are essential for a Product Manager.",
+                "severity": "CRITICAL",
+                "missing_skill": "Business Acumen & Stakeholder Management",
+                "suggested_patch": {
+                  "id": "patch_3",
+                  "title": "Develop Business Acumen and Stakeholder Management Skills",
+                  "action_items": [
+                    "Learn about market research techniques and competitive analysis.",
+                    "Understand business strategy, P&L, and ROI concepts.",
+                    "Practice stakeholder identification, analysis, and communication strategies.",
+                    "Develop skills in user story mapping and backlog prioritization.",
+                    "Gain experience in presenting product vision and strategy to diverse audiences."
+                  ],
+                  "estimated_hours": 60,
+                  "status": "OPEN",
+                  "resources": [
+                    "Udemy: Product Management: From Vision to Execution",
+                    "LinkedIn Learning: Product Management Courses",
+                    "Book: The Lean Startup by Eric Ries",
+                    "Harvard Business Review: Articles on Strategy and Management"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_4",
+                "description": "While communication is listed as a skill, product management requires specific communication styles for different audiences (technical teams, business stakeholders, customers) and effective presentation skills.",
+                "severity": "WARNING",
+                "missing_skill": "Product-Specific Communication & Presentation",
+                "suggested_patch": {
+                  "id": "patch_4",
+                  "title": "Enhance Product-Specific Communication and Presentation Skills",
+                  "action_items": [
+                    "Practice articulating technical concepts to non-technical audiences.",
+                    "Develop skills in creating compelling product presentations and demos.",
+                    "Learn techniques for effective negotiation and conflict resolution with stakeholders.",
+                    "Seek opportunities to present project updates or product ideas in team meetings."
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": [
+                    "Toastmasters International",
+                    "Coursera: Presentation Skills Training",
+                    "Book: Crucial Conversations"
+                  ]
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "0dc67c87-ed03-41cc-9803-76107b05cc72": {
+            "id": "0dc67c87-ed03-41cc-9803-76107b05cc72",
+            "name": "Path to CEO",
+            "target_role": "CEO",
+            "job_description": "A Chief Executive Officer (CEO) is the highest-ranking executive, responsible for setting the strategic vision, driving growth, and leading overall operations to ensure long-term profitability",
+            "created_at": "2026-02-17T20:17:56.092082",
+            "conflicts": [
+              {
+                "id": "conflict-2",
+                "description": "The user profile is heavily focused on technical backend development and lacks experience in high-level decision-making, stakeholder management, and P&L responsibility.",
+                "severity": "CRITICAL",
+                "missing_skill": "Executive Decision Making and Financial Management",
+                "suggested_patch": {
+                  "id": "patch-2",
+                  "title": "Gain Executive Decision-Making and Financial Management Experience",
+                  "action_items": [
+                    "Pursue certifications in financial modeling and analysis.",
+                    "Take courses on corporate finance and accounting.",
+                    "Actively participate in budgeting and forecasting processes within current or future roles.",
+                    "Seek opportunities to present business cases and financial projections to leadership.",
+                    "Study case studies of successful and unsuccessful CEO decisions."
+                  ],
+                  "estimated_hours": 2000,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: Financial Management Specialization by University of Illinois",
+                    "edX: Corporate Finance by IIMBx",
+                    "Books: 'Financial Intelligence for Entrepreneurs' by Karen Berman and Joe Knight",
+                    "Online courses on platforms like Udemy or LinkedIn Learning for financial modeling."
+                  ]
+                }
+              },
+              {
+                "id": "conflict-3",
+                "description": "While communication is listed, the depth and breadth required for a CEO, including public speaking, negotiation, and cross-functional communication at an executive level, are not specified.",
+                "severity": "WARNING",
+                "missing_skill": "Advanced Executive Communication and Negotiation",
+                "suggested_patch": {
+                  "id": "patch-3",
+                  "title": "Enhance Executive Communication and Negotiation Skills",
+                  "action_items": [
+                    "Join Toastmasters International to improve public speaking and presentation skills.",
+                    "Take advanced negotiation workshops or courses.",
+                    "Practice active listening and empathetic communication in all interactions.",
+                    "Seek opportunities to lead meetings and present to diverse audiences.",
+                    "Study communication strategies of successful leaders."
+                  ],
+                  "estimated_hours": 500,
+                  "status": "OPEN",
+                  "resources": [
+                    "Toastmasters International: www.toastmasters.org",
+                    "Coursera: Successful Negotiation: Essential Strategies and Skills by University of Michigan",
+                    "Books: 'Never Split the Difference' by Chris Voss",
+                    "Workshops on executive presence and public speaking."
+                  ]
+                }
+              }
+            ],
+            "is_active": true
+          }
+        },
+        "active_branch_id": "0dc67c87-ed03-41cc-9803-76107b05cc72",
+        "meta": {}
+      }
+    },
+    {
+      "id": "94f06b25-c7a2-4988-8316-b9ca668ad0bc",
+      "timestamp": "2026-02-17T20:19:11.328384",
+      "message": "Rolled back to commit 95c28d76-2e8b-4fa6-a28a-ff79372c0ae6",
+      "parent_hash": "76a716ad-5e01-47b2-9b3a-968a9cf7d41a",
+      "snapshot": {
+        "user_id": "demo-user",
+        "full_name": "Alex Chen",
+        "current_role": "Backend Developer",
+        "experience": [
+          "Software Engineer Intern @ Google",
+          "Junior Python Developer @ Startup"
+        ],
+        "skills": [
+          {
+            "name": "Python",
+            "category": "Hard",
+            "proficiency": 0.9
+          },
+          {
+            "name": "Django",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "REST APIs",
+            "category": "Hard",
+            "proficiency": 0.85
+          },
+          {
+            "name": "SQL",
+            "category": "Hard",
+            "proficiency": 0.75
+          },
+          {
+            "name": "Git",
+            "category": "Hard",
+            "proficiency": 0.8
+          },
+          {
+            "name": "Communication",
+            "category": "Soft",
+            "proficiency": 0.7
+          },
+          {
+            "name": "PyTorch",
+            "category": "Hard",
+            "proficiency": 0.8
+          }
+        ],
+        "branches": {
+          "main": {
+            "id": "main",
+            "name": "Current: Backend Dev",
+            "target_role": "Senior Backend Engineer",
+            "job_description": null,
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [],
+            "is_active": false
+          },
+          "feature-ai-engineer": {
+            "id": "feature-ai-engineer",
+            "name": "Pivot to AI",
+            "target_role": "AI Engineer",
+            "job_description": "Build and deploy ML models at scale. Requires PyTorch, MLOps.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c2",
+                "description": "Lack of theoretical foundation in Deep Learning.",
+                "severity": "WARNING",
+                "missing_skill": "Neural Networks",
+                "suggested_patch": {
+                  "id": "a1493298-2b7d-4112-a38a-85cfc6f80350",
+                  "title": "Deep Learning Specialization",
+                  "action_items": [
+                    "Watch Andrew Ng's course",
+                    "Implement backprop from scratch"
+                  ],
+                  "estimated_hours": 40,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c5",
+                "description": "No experience with ML deployment pipelines.",
+                "severity": "CRITICAL",
+                "missing_skill": "MLOps",
+                "suggested_patch": {
+                  "id": "0d06601f-d798-47b8-9d16-97b91fc0cf50",
+                  "title": "MLOps Fundamentals",
+                  "action_items": [
+                    "Learn MLflow",
+                    "Deploy model to AWS SageMaker"
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-pm": {
+            "id": "feature-pm",
+            "name": "Pivot to PM",
+            "target_role": "Product Manager",
+            "job_description": "Lead product strategy and execution for AI products.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c3",
+                "description": "No experience with product analytics tools.",
+                "severity": "CRITICAL",
+                "missing_skill": "Mixpanel",
+                "suggested_patch": {
+                  "id": "21f0d4c5-9eb7-4f70-876c-a48e5e2bd35e",
+                  "title": "Product Analytics 101",
+                  "action_items": [
+                    "Learn funnel analysis",
+                    "Setup a mock dashboard"
+                  ],
+                  "estimated_hours": 10,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c4",
+                "description": "Need to improve stakeholder management.",
+                "severity": "WARNING",
+                "missing_skill": "Stakeholder Management",
+                "suggested_patch": {
+                  "id": "caa4eb0b-dabc-4f4c-834f-009fcecbbbbd",
+                  "title": "Leadership Skills",
+                  "action_items": [
+                    "Read 'The Mom Test'",
+                    "Practice user interviews"
+                  ],
+                  "estimated_hours": 15,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "feature-fullstack": {
+            "id": "feature-fullstack",
+            "name": "Go Full-Stack",
+            "target_role": "Full-Stack Engineer",
+            "job_description": "Build end-to-end features. Requires React, Node.js.",
+            "created_at": "2026-02-07T13:02:27.457023",
+            "conflicts": [
+              {
+                "id": "c6",
+                "description": "No frontend framework experience.",
+                "severity": "CRITICAL",
+                "missing_skill": "React",
+                "suggested_patch": {
+                  "id": "a7d0d060-406e-4e77-b200-13662d4e4413",
+                  "title": "React Crash Course",
+                  "action_items": [
+                    "Complete React official tutorial",
+                    "Build a TODO app"
+                  ],
+                  "estimated_hours": 25,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              },
+              {
+                "id": "c7",
+                "description": "Limited Node.js backend experience.",
+                "severity": "WARNING",
+                "missing_skill": "Node.js",
+                "suggested_patch": {
+                  "id": "4f3ace6b-43eb-41a1-be00-8b95afeb9056",
+                  "title": "Node.js Essentials",
+                  "action_items": [
+                    "Build Express.js API",
+                    "Learn async patterns"
+                  ],
+                  "estimated_hours": 20,
+                  "status": "OPEN",
+                  "resources": []
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "38254261-318b-4012-b711-39201c32d40d": {
+            "id": "38254261-318b-4012-b711-39201c32d40d",
+            "name": "Path to AI Product Manager",
+            "target_role": "AI Product Manager",
+            "job_description": "Manage and perform all process oriented functions for an AI product",
+            "created_at": "2026-02-07T13:27:01.362212",
+            "conflicts": [
+              {
+                "id": "conflict_1",
+                "description": "The user profile lacks experience in product management methodologies, agile frameworks, and understanding of the product lifecycle, which are crucial for an AI Product Manager role.",
+                "severity": "CRITICAL",
+                "missing_skill": "Product Management Fundamentals",
+                "suggested_patch": {
+                  "id": "patch_1",
+                  "title": "Develop Product Management Fundamentals",
+                  "action_items": [
+                    "Study core product management principles, including market research, user empathy, and roadmap development.",
+                    "Learn about agile methodologies (Scrum, Kanban) and their application in product development.",
+                    "Understand the product lifecycle from ideation to launch and iteration.",
+                    "Familiarize with AI product-specific considerations like data strategy, ethical AI, and model deployment."
+                  ],
+                  "estimated_hours": 80,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: Product Management Specialization",
+                    "Udemy: Agile Product Management Course",
+                    "Product School: Certified Product Manager (CPM) Program",
+                    "Book: Inspired by Marty Cagan"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_2",
+                "description": "While the user has Python and PyTorch skills, the target role requires a broader understanding of AI/ML concepts from a product perspective, including model evaluation, deployment strategies, and understanding different AI techniques beyond just implementation.",
+                "severity": "CRITICAL",
+                "missing_skill": "AI/ML Product Strategy & Lifecycle",
+                "suggested_patch": {
+                  "id": "patch_2",
+                  "title": "Gain AI/ML Product Strategy Expertise",
+                  "action_items": [
+                    "Learn about different AI/ML models and their use cases in product development.",
+                    "Understand how to define AI product requirements and success metrics.",
+                    "Study AI model evaluation techniques and interpretability.",
+                    "Explore AI deployment strategies and MLOps concepts.",
+                    "Research ethical considerations and bias in AI products."
+                  ],
+                  "estimated_hours": 100,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: AI for Everyone by Andrew Ng",
+                    "edX: AI Product Management MicroMasters Program",
+                    "Google AI: Responsible AI Practices",
+                    "Kaggle: Learn and explore AI/ML projects"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_3",
+                "description": "The user profile indicates backend development skills but lacks direct experience in stakeholder management, market analysis, and go-to-market strategies, which are essential for a Product Manager.",
+                "severity": "CRITICAL",
+                "missing_skill": "Business Acumen & Stakeholder Management",
+                "suggested_patch": {
+                  "id": "patch_3",
+                  "title": "Develop Business Acumen and Stakeholder Management Skills",
+                  "action_items": [
+                    "Learn about market research techniques and competitive analysis.",
+                    "Understand business strategy, P&L, and ROI concepts.",
+                    "Practice stakeholder identification, analysis, and communication strategies.",
+                    "Develop skills in user story mapping and backlog prioritization.",
+                    "Gain experience in presenting product vision and strategy to diverse audiences."
+                  ],
+                  "estimated_hours": 60,
+                  "status": "OPEN",
+                  "resources": [
+                    "Udemy: Product Management: From Vision to Execution",
+                    "LinkedIn Learning: Product Management Courses",
+                    "Book: The Lean Startup by Eric Ries",
+                    "Harvard Business Review: Articles on Strategy and Management"
+                  ]
+                }
+              },
+              {
+                "id": "conflict_4",
+                "description": "While communication is listed as a skill, product management requires specific communication styles for different audiences (technical teams, business stakeholders, customers) and effective presentation skills.",
+                "severity": "WARNING",
+                "missing_skill": "Product-Specific Communication & Presentation",
+                "suggested_patch": {
+                  "id": "patch_4",
+                  "title": "Enhance Product-Specific Communication and Presentation Skills",
+                  "action_items": [
+                    "Practice articulating technical concepts to non-technical audiences.",
+                    "Develop skills in creating compelling product presentations and demos.",
+                    "Learn techniques for effective negotiation and conflict resolution with stakeholders.",
+                    "Seek opportunities to present project updates or product ideas in team meetings."
+                  ],
+                  "estimated_hours": 30,
+                  "status": "OPEN",
+                  "resources": [
+                    "Toastmasters International",
+                    "Coursera: Presentation Skills Training",
+                    "Book: Crucial Conversations"
+                  ]
+                }
+              }
+            ],
+            "is_active": false
+          },
+          "0dc67c87-ed03-41cc-9803-76107b05cc72": {
+            "id": "0dc67c87-ed03-41cc-9803-76107b05cc72",
+            "name": "Path to CEO",
+            "target_role": "CEO",
+            "job_description": "A Chief Executive Officer (CEO) is the highest-ranking executive, responsible for setting the strategic vision, driving growth, and leading overall operations to ensure long-term profitability",
+            "created_at": "2026-02-17T20:17:56.092082",
+            "conflicts": [
+              {
+                "id": "conflict-1",
+                "description": "The user profile lacks experience in strategic leadership, financial management, and broad business operations, which are core responsibilities of a CEO.",
+                "severity": "CRITICAL",
+                "missing_skill": "Strategic Vision and Leadership",
+                "suggested_patch": {
+                  "id": "patch-1",
+                  "title": "Develop Strategic Leadership and Business Acumen",
+                  "action_items": [
+                    "Complete an MBA program or equivalent executive education.",
+                    "Seek mentorship from experienced CEOs or senior executives.",
+                    "Take on leadership roles in projects or volunteer organizations to practice strategic decision-making.",
+                    "Read extensively on business strategy, finance, marketing, and operations."
+                  ],
+                  "estimated_hours": 5000,
+                  "status": "OPEN",
+                  "resources": [
+                    "Harvard Business School Online - CORe (Certificate of Readiness for Business Education)",
+                    "Coursera: MBA Essentials by University of Cape Town",
+                    "Books: 'Good to Great' by Jim Collins, 'The Lean Startup' by Eric Ries",
+                    "Mentorship programs offered by industry associations or professional networks."
+                  ]
+                }
+              },
+              {
+                "id": "conflict-2",
+                "description": "The user profile is heavily focused on technical backend development and lacks experience in high-level decision-making, stakeholder management, and P&L responsibility.",
+                "severity": "CRITICAL",
+                "missing_skill": "Executive Decision Making and Financial Management",
+                "suggested_patch": {
+                  "id": "patch-2",
+                  "title": "Gain Executive Decision-Making and Financial Management Experience",
+                  "action_items": [
+                    "Pursue certifications in financial modeling and analysis.",
+                    "Take courses on corporate finance and accounting.",
+                    "Actively participate in budgeting and forecasting processes within current or future roles.",
+                    "Seek opportunities to present business cases and financial projections to leadership.",
+                    "Study case studies of successful and unsuccessful CEO decisions."
+                  ],
+                  "estimated_hours": 2000,
+                  "status": "OPEN",
+                  "resources": [
+                    "Coursera: Financial Management Specialization by University of Illinois",
+                    "edX: Corporate Finance by IIMBx",
+                    "Books: 'Financial Intelligence for Entrepreneurs' by Karen Berman and Joe Knight",
+                    "Online courses on platforms like Udemy or LinkedIn Learning for financial modeling."
+                  ]
+                }
+              },
+              {
+                "id": "conflict-3",
+                "description": "While communication is listed, the depth and breadth required for a CEO, including public speaking, negotiation, and cross-functional communication at an executive level, are not specified.",
+                "severity": "WARNING",
+                "missing_skill": "Advanced Executive Communication and Negotiation",
+                "suggested_patch": {
+                  "id": "patch-3",
+                  "title": "Enhance Executive Communication and Negotiation Skills",
+                  "action_items": [
+                    "Join Toastmasters International to improve public speaking and presentation skills.",
+                    "Take advanced negotiation workshops or courses.",
+                    "Practice active listening and empathetic communication in all interactions.",
+                    "Seek opportunities to lead meetings and present to diverse audiences.",
+                    "Study communication strategies of successful leaders."
+                  ],
+                  "estimated_hours": 500,
+                  "status": "OPEN",
+                  "resources": [
+                    "Toastmasters International: www.toastmasters.org",
+                    "Coursera: Successful Negotiation: Essential Strategies and Skills by University of Michigan",
+                    "Books: 'Never Split the Difference' by Chris Voss",
+                    "Workshops on executive presence and public speaking."
+                  ]
+                }
+              }
+            ],
+            "is_active": true
+          }
+        },
+        "active_branch_id": "0dc67c87-ed03-41cc-9803-76107b05cc72",
         "meta": {}
       }
     }

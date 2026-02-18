@@ -13,6 +13,12 @@ if [ ! -f "backend/.env" ]; then
     read -p "   Press Enter to continue anyway, or Ctrl+C to stop..."
 fi
 
+# 1b. Create User Data Directory
+if [ ! -d "backend/data/users" ]; then
+    echo "Creating backend/data/users directory..."
+    mkdir -p backend/data/users
+fi
+
 # 2. Setup Backend
 echo "🔵 Setting up Backend..."
 cd backend

@@ -7,6 +7,7 @@ import BranchExplorerPage from './pages/BranchExplorerPage';
 import CoachPage from './pages/CoachPage';
 import InterviewPage from './pages/InterviewPage';
 import type { ReactNode } from 'react';
+import { Toaster } from './components/ui/sonner';
 
 function ProtectedRoute({ children }: { children: ReactNode }) {
   const token = localStorage.getItem('token');
@@ -34,6 +35,7 @@ function App() {
           <Route path="interview" element={<InterviewPage />} />
         </Route>
       </Routes>
+      <Toaster />
     </Router>
   )
 }

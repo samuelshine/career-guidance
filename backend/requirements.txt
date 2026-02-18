@@ -9,3 +9,8 @@ pypdf
 python-jose[cryptography]
 bcrypt
 python-dotenv
+pytest
+httpx
+pypdf
+langchain-community
+duckduckgo-search
